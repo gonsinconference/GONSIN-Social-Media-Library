@@ -1,0 +1,290 @@
+<!doctype html>
+<!-- GONSIN_SITE_START -->
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#961928">
+  <meta name="description" content="Explore and share GONSIN product demos, conference projects, AV solutions and exhibition highlights.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GONSIN Social Media Library">
+  <meta property="og:title" content="GONSIN Social Media Library">
+  <meta property="og:description" content="Product demos, conference projects and exhibition highlights from GONSIN’s official channels.">
+  <meta property="og:url" content="https://gonsinconference.github.io/GONSIN-Social-Media-Library/">
+  <meta property="og:image" content="https://gonsinconference.github.io/GONSIN-Social-Media-Library/assets/share-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GONSIN Social Media Library and a GONSIN boardroom">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://gonsinconference.github.io/GONSIN-Social-Media-Library/">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="assets/barlow.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=009f5e6750594f643b193e7f">
+  <script src="catalog.js?v=009f5e6750594f643b193e7f" defer></script>
+  <script src="app.js?v=009f5e6750594f643b193e7f" defer></script>
+  <script src="excel-download.js?v=009f5e6750594f643b193e7f" defer></script>
+  <title>GONSIN Social Media Library</title>
+</head>
+<body>
+  <a class="skip-link" href="#library">Skip to the library</a>
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="GONSIN Social Media Library home">
+        <img src="assets/gonsin.webp" width="300" height="37" alt="GONSIN">
+        <span>Media Library</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#highlights">Highlights</a>
+        <a href="#library">Browse library</a>
+      </nav>
+      <button class="button header-share" type="button" data-copy>
+        <span class="icon icon-link" aria-hidden="true"></span><span class="share-label">Share library</span>
+      </button>
+    </div>
+  </header>
+
+  <a class="contact-shortcut" href="#contact">Contact us <span aria-hidden="true">↓</span></a>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-visual">
+        <img src="assets/boardroom.webp" width="958" height="424" alt="A GONSIN boardroom with paperless conference terminals and wall-mounted displays" fetchpriority="high">
+      </div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Conference &amp; Pro AV</p>
+          <h1 id="hero-title">Social Media<br>Library</h1>
+          <p class="hero-description">Product demos, conference projects and event highlights from GONSIN’s official channels.</p>
+          <div class="hero-actions">
+            <a class="button hero-button" href="#library">Browse the library <span class="arrow" aria-hidden="true">↓</span></a>
+            <a class="button excel-button" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=009f5e6750594f643b193e7f" download="GONSIN-Social-Media-Library.xlsx">Download Excel <span class="file-type">.xlsx</span></a>
+          </div>
+        </div>
+        <a class="photo-credit" href="https://www.gonsin.com/360-virtual-tour.html" target="_blank" rel="noopener noreferrer">GONSIN virtual showroom <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <div class="archive-bar">
+      <div class="wrap archive-inner">
+        <p class="archive-counts"><span><strong id="post-count">428</strong> social posts</span><span><strong id="article-count">62</strong> official articles</span></p>
+        <p class="archive-dates" id="archive-dates" hidden></p>
+      </div>
+    </div>
+
+    <section id="highlights" class="highlights-section wrap" aria-labelledby="highlights-title">
+      <div class="section-heading">
+        <h2 id="highlights-title">Featured highlights</h2>
+        <a class="text-link" href="#library">View all resources <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="highlights-grid" id="highlights-grid"></div>
+    </section>
+
+    <section id="library" class="library-section" aria-labelledby="library-title">
+      <div class="wrap">
+        <div class="section-heading library-heading">
+          <h2 id="library-title" tabindex="-1">Browse the library</h2>
+          <p>Find a post by topic, product model or platform.</p>
+        </div>
+        <form class="filters" id="filters" role="search" aria-label="Search and filter the library">
+          <div class="search-row">
+            <div class="search-field">
+              <label class="sr-only" for="search">Search titles and product models</label>
+              <span class="icon icon-search" aria-hidden="true"></span>
+              <input id="search" name="search" type="search" placeholder="Search titles and product models" autocomplete="off">
+            </div>
+            <label class="select-field"><span class="sr-only">Year</span><select id="year" name="year"><option value="">All years</option></select></label>
+            <label class="select-field"><span class="sr-only">Platform</span><select id="platform" name="platform"><option value="">All platforms</option><option value="linkedin">LinkedIn</option><option value="facebook">Facebook</option><option value="youtube">YouTube</option><option value="drive">Google Drive</option><option value="canva">Canva</option><option value="website">GONSIN.com</option></select></label>
+            <label class="select-field"><span class="sr-only">Sort order</span><select id="sort" name="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label>
+          </div>
+          <div class="category-row" id="category-row" role="group" aria-label="Resource category">
+            <button class="category" type="button" data-category="all" aria-pressed="true">All resources</button>
+            <button class="category" type="button" data-category="videos" aria-pressed="false">Videos</button>
+            <button class="category" type="button" data-category="projects" aria-pressed="false">Project cases</button>
+            <button class="category" type="button" data-category="solutions" aria-pressed="false">Products &amp; solutions</button>
+            <button class="category" type="button" data-category="newsletters" aria-pressed="false">Newsletters</button>
+            <button class="category" type="button" data-category="events" aria-pressed="false">Exhibitions</button>
+            <button class="category" type="button" data-category="articles" aria-pressed="false">Official articles</button>
+            <button class="category" type="button" data-category="updates" aria-pressed="false">Brand updates</button>
+          </div>
+        </form>
+        <div class="results-bar">
+          <p id="result-count" role="status" aria-live="polite" aria-atomic="true"></p>
+          <div class="results-actions">
+            <button class="text-link" type="button" id="reset-filters" hidden>Clear filters</button>
+            <a class="text-link" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=009f5e6750594f643b193e7f" download="GONSIN-Social-Media-Library.xlsx">Download Excel <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="resources-grid" id="resources-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>No matching resources</h3>
+          <p>Try a different keyword or clear your filters.</p>
+        </div>
+        <div class="load-row" id="load-row" hidden>
+          <button class="button load-button" type="button" id="load-more">Load more <span aria-hidden="true">↓</span></button>
+        </div>
+        <noscript>
+          <p class="empty-state">Enable JavaScript to browse the library, or visit <a href="https://www.gonsin.com/">GONSIN.com</a> for official resources.</p>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact" tabindex="-1">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Back to the top">
+        <img src="assets/gonsin.webp" width="300" height="37" loading="lazy" alt="GONSIN"><span>Media Library</span>
+      </a>
+      <div class="footer-details">
+        <address class="footer-contact">
+          <ul aria-label="GONSIN contact information">
+            <li><strong>GONSIN-AI:</strong> <a href="https://www.gonsinai.com/" target="_blank" rel="noopener noreferrer">www.gonsinai.com</a></li>
+            <li><strong>Website:</strong> <a href="https://www.gonsin.com/" target="_blank" rel="noopener noreferrer">www.gonsin.com</a></li>
+            <li><strong>WhatsApp:</strong> +86-189-2326-6901</li>
+            <li><strong>Email:</strong> <a href="mailto:foreigntrade@gonsin.com">foreigntrade@gonsin.com</a></li>
+          </ul>
+        </address>
+        <nav class="footer-social" aria-label="GONSIN social media">
+          <a href="https://www.linkedin.com/company/gonsin-conference-equipment-co-ltd-/posts/?viewAsMember=true"
+             target="_blank" rel="noopener noreferrer" aria-label="GONSIN on LinkedIn" title="LinkedIn">
+            <img src="assets/social-linkedin.png" alt="" width="18" height="18">
+          </a>
+          <a href="https://www.facebook.com/2003Gonsin"
+             target="_blank" rel="noopener noreferrer" aria-label="GONSIN on Facebook" title="Facebook">
+            <img src="assets/social-facebook.png" alt="" width="18" height="18">
+          </a>
+          <a href="https://www.instagram.com/gonsin_conference/"
+             target="_blank" rel="noopener noreferrer" aria-label="GONSIN on Instagram" title="Instagram">
+            <img src="assets/social-instagram.png" alt="" width="18" height="18">
+          </a>
+          <a href="https://www.youtube.com/@gonsin2003"
+             target="_blank" rel="noopener noreferrer" aria-label="GONSIN on YouTube" title="YouTube">
+            <img src="assets/social-youtube.png" alt="" width="18" height="18">
+          </a>
+          <a href="https://www.pinterest.com/gonsin/gonsin/"
+             target="_blank" rel="noopener noreferrer" aria-label="GONSIN on Pinterest" title="Pinterest">
+            <img src="assets/social-pinterest.png" alt="" width="18" height="18">
+          </a>
+          <a href="https://x.com/GONSIN2003"
+             target="_blank" rel="noopener noreferrer" aria-label="GONSIN on X" title="X">
+            <img src="assets/social-x.png" alt="" width="18" height="18">
+          </a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="resource-dialog" class="dialog" aria-labelledby="detail-title">
+    <div class="dialog-shell">
+      <button class="button icon-button dialog-close" type="button" data-close aria-label="Close resource" autofocus>×</button>
+      <img class="detail-image" id="detail-image" alt="" hidden>
+      <div class="detail-body">
+        <p class="detail-meta" id="detail-meta"></p>
+        <h2 id="detail-title"></h2>
+        <p class="detail-model" id="detail-model" hidden></p>
+        <p id="detail-description" hidden></p>
+        <div class="detail-actions">
+          <div id="detail-links" class="platform-links" aria-label="Original sources"></div>
+          <button class="button detail-share" type="button" id="detail-share" data-copy><span class="icon icon-link" aria-hidden="true"></span> Copy link</button>
+        </div>
+        <p class="detail-feedback" id="detail-feedback" role="status"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="share-dialog" class="dialog share-dialog" aria-labelledby="share-title">
+    <div class="dialog-shell detail-body">
+      <button class="button icon-button dialog-close" type="button" data-close aria-label="Close share dialog">×</button>
+      <h2 id="share-title">Copy link</h2>
+      <label for="share-url">Select and copy this URL.</label>
+      <input id="share-url" type="url" readonly>
+    </div>
+  </dialog>
+  <dialog id="excel-dialog" class="dialog excel-dialog" aria-labelledby="excel-title">
+    <div class="dialog-shell detail-body">
+      <button class="button icon-button dialog-close" type="button" data-close aria-label="Close Excel download">×</button>
+      <h2 id="excel-title">Download Excel</h2>
+      <form id="excel-form">
+        <div class="excel-date-fields">
+          <div>
+            <label for="excel-from">Start date</label>
+            <div class="excel-date-entry">
+              <input type="text" id="excel-from" name="from" placeholder="YYYY-MM-DD" autocomplete="off" spellcheck="false" aria-describedby="excel-range">
+              <button class="button icon-button" type="button" data-calendar-for="excel-from" aria-label="Choose start date" aria-haspopup="dialog" disabled><span class="icon icon-calendar" aria-hidden="true"></span></button>
+            </div>
+          </div>
+          <div>
+            <label for="excel-to">End date</label>
+            <div class="excel-date-entry">
+              <input type="text" id="excel-to" name="to" placeholder="YYYY-MM-DD" autocomplete="off" spellcheck="false" aria-describedby="excel-range">
+              <button class="button icon-button" type="button" data-calendar-for="excel-to" aria-label="Choose end date" aria-haspopup="dialog" disabled><span class="icon icon-calendar" aria-hidden="true"></span></button>
+            </div>
+          </div>
+        </div>
+        <p class="excel-hint" id="excel-range">Leave either date blank for an open range.</p>
+        <fieldset class="excel-types">
+          <legend>Type</legend>
+          <p class="excel-hint">Select one or more types. Leave them unchecked to include every type.</p>
+          <div class="excel-type-list" id="excel-types"></div>
+        </fieldset>
+        <p class="excel-status" id="excel-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <div class="excel-download-actions">
+          <button class="button excel-download-primary" id="download-selection" type="submit" disabled>Download selection <span aria-hidden="true">↓</span></button>
+          <a class="text-link" id="download-full-workbook" href="GONSIN-Social-Media-Library.xlsx?v=009f5e6750594f643b193e7f" download="GONSIN-Social-Media-Library.xlsx">Download all</a>
+        </div>
+      </form>
+    </div>
+  </dialog>
+  <dialog id="excel-calendar" class="dialog excel-calendar" aria-labelledby="calendar-title">
+    <div class="dialog-shell detail-body">
+      <button class="button icon-button dialog-close" type="button" data-close aria-label="Close calendar">×</button>
+      <h2 id="calendar-title">Choose date</h2>
+      <div class="calendar-toolbar">
+        <button class="button icon-button" id="calendar-prev" type="button" aria-label="Previous month">‹</button>
+        <select id="calendar-month" aria-label="Month"></select>
+        <select id="calendar-year" aria-label="Year"></select>
+        <button class="button icon-button" id="calendar-next" type="button" aria-label="Next month">›</button>
+      </div>
+      <table class="calendar-days" aria-label="Dates">
+        <thead>
+          <tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr>
+        </thead>
+        <tbody id="calendar-days"></tbody>
+      </table>
+    </div>
+  </dialog>
+  <p id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></p>
+
+  <template id="resource-template">
+    <article class="resource">
+      <div class="resource-meta">
+        <span class="resource-type"></span>
+        <time class="resource-date"></time>
+      </div>
+      <h3><a class="resource-title"></a></h3>
+      <p class="resource-model" hidden></p>
+      <div class="resource-footer">
+        <div class="platform-links"></div>
+        <button class="button icon-button resource-share" type="button" title="Copy resource link" data-copy>
+          <span class="icon icon-link" aria-hidden="true"></span><span class="sr-only">Copy resource link</span>
+        </button>
+      </div>
+    </article>
+  </template>
+
+  <template id="highlight-template">
+    <a class="highlight">
+      <div class="highlight-media"><img alt="" width="800" height="390" loading="lazy"></div>
+      <div class="highlight-content">
+        <div>
+          <p class="highlight-type"></p>
+          <h3></h3>
+          <p class="highlight-caption" hidden></p>
+        </div>
+        <span class="highlight-arrow" aria-hidden="true">↗</span>
+      </div>
+    </a>
+  </template>
+</body>
+</html>

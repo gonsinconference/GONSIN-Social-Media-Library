@@ -19,6 +19,12 @@
   const calendarDays = document.querySelector("#calendar-days");
   const calendarButtons = [...document.querySelectorAll("[data-calendar-for]")];
   const release = new URL(fullWorkbook.href).searchParams.get("v");
+  const linkGroups = new Map([
+    ["social", ["linkedin", "facebook", "youtube"]],
+    ["website", ["website"]],
+    ["drive", ["drive"]],
+    ["canva", ["canva"]],
+  ]);
   const isoDate = /^\d{4}-\d{2}-\d{2}$/;
   const dateFormat = new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeZone: "UTC" });
   const monthFormat = new Intl.DateTimeFormat("en-US", { month: "long", timeZone: "UTC" });
@@ -27,6 +33,7 @@
   let records;
   let recordsPromise;
   let selection = [];
+  let selectedLinks = [];
   let dateInput;
 
   function loadScript(path) {
@@ -95,7 +102,9 @@
           return response.arrayBuffer();
         }),
       ]).then(([, bytes]) => {
-        records = window.GonsinWeekly.readFile(bytes, window.XLSX).records;
+        const tools = window.GonsinWeekly;
+        const posts = tools.readFile(bytes, window.XLSX).records;
+        records = tools.downloadRecords(posts, window.gonsinCatalog);
         renderOptions();
       }).catch(error => {
         recordsPromise = undefined;
@@ -126,13 +135,17 @@
       message(reversed ? "End date must be on or after the start date." : "Enter a valid date as YYYY-MM-DD.", true);
       return;
     }
-    const types = new Set(new FormData(form).getAll("type"));
+    const values = new FormData(form);
+    const types = new Set(values.getAll("type"));
+    const links = new Set(values.getAll("link-type").flatMap(group => linkGroups.get(group) || []));
+    selectedLinks = window.GonsinWeekly.downloadLinkKeys.filter(key => !links.size || links.has(key));
     selection = records.filter(row =>
       (!start || row.date >= start) && (!end || row.date <= end)
-      && (!types.size || types.has(row.sourceType)));
+      && (!types.size || types.has(row.sourceType))
+      && selectedLinks.some(key => row.links[key]));
     submit.disabled = selection.length === 0;
     if (!selection.length) {
-      message("No records match. Choose different dates or types.");
+      message("No records match. Change the dates, types or links.");
       return;
     }
     const label = selection.length === 1 ? "record" : "records";
@@ -217,36 +230,50 @@
       try {
         await readRecords();
       } catch {
-        message("Filters could not load. Reopen this window to retry, or use Download all.", true);
+        message("Filters could not load. Reopen this window to retry, or use Download all for the social media workbook.", true);
         return;
       }
     }
     updateSelection();
   }
 
-  function downloadSelection(event) {
-    event.preventDefault();
-    if (!selection.length) return;
-    if (selection.length === records.length) {
-      fullWorkbook.click();
-      return;
-    }
+  function downloadWorkbook(rows, links, filename) {
     try {
       const tools = window.GonsinWeekly;
-      const bytes = tools.makeWorkbook(selection, window.XLSX);
+      const bytes = tools.makeWorkbook(rows, window.XLSX, links);
       const url = URL.createObjectURL(new Blob([bytes], { type: tools.mime }));
       const link = document.createElement("a");
       link.href = url;
-      link.download = "GONSIN-Social-Media-Selection.xlsx";
+      link.download = filename;
       document.body.append(link);
       link.click();
       link.remove();
       window.setTimeout(() => URL.revokeObjectURL(url), 30_000);
     } catch {
-      message("Could not create the Excel file. Try again or use Download all.", true);
+      message("Could not create the Excel file. Please try again.", true);
     }
   }
 
+  function downloadSelection(event) {
+    event.preventDefault();
+    if (!selection.length) return;
+    const tools = window.GonsinWeekly;
+    const complete = selection.length === records.length && selectedLinks.length === tools.downloadLinkKeys.length;
+    downloadWorkbook(selection, selectedLinks, complete ? tools.filename : "GONSIN-Social-Media-Selection.xlsx");
+  }
+
+  fullWorkbook.addEventListener("click", async event => {
+    if (!recordsPromise || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    try {
+      await recordsPromise;
+    } catch {
+      fullWorkbook.click();
+      return;
+    }
+    const tools = window.GonsinWeekly;
+    downloadWorkbook(records, tools.downloadLinkKeys, tools.filename);
+  });
   for (const link of document.querySelectorAll("[data-excel-download]")) link.addEventListener("click", openDownload);
   for (let month = 0; month < 12; month++) {
     calendarMonth.add(new Option(monthFormat.format(utcDate(2000, month, 1)), String(month)));

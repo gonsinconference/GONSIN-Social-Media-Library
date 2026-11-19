@@ -21,10 +21,10 @@
   <link rel="canonical" href="https://gonsinconference.github.io/GONSIN-Social-Media-Library/">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preload" href="assets/barlow.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=3301d8d0834361d3e0d46756">
-  <script src="catalog.js?v=3301d8d0834361d3e0d46756" defer></script>
-  <script src="app.js?v=3301d8d0834361d3e0d46756" defer></script>
-  <script src="excel-download.js?v=3301d8d0834361d3e0d46756" defer></script>
+  <link rel="stylesheet" href="styles.css?v=c46444e4a6f01a459f8211f6">
+  <script src="catalog.js?v=c46444e4a6f01a459f8211f6" defer></script>
+  <script src="app.js?v=c46444e4a6f01a459f8211f6" defer></script>
+  <script src="excel-download.js?v=c46444e4a6f01a459f8211f6" defer></script>
   <title>GONSIN Social Media Library</title>
 </head>
 <body>
@@ -59,7 +59,7 @@
           <p class="hero-description">Product demos, conference projects and event highlights from GONSIN’s official channels.</p>
           <div class="hero-actions">
             <a class="button hero-button" href="#library">Browse the library <span class="arrow" aria-hidden="true">↓</span></a>
-            <a class="button excel-button" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=3301d8d0834361d3e0d46756" download="GONSIN-Social-Media-Library.xlsx">Download Excel <span class="file-type">.xlsx</span></a>
+            <a class="button excel-button" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=c46444e4a6f01a459f8211f6" download="GONSIN-Social-Media-Library.xlsx">Download Excel <span class="file-type">.xlsx</span></a>
           </div>
         </div>
         <a class="photo-credit" href="https://www.gonsin.com/360-virtual-tour.html" target="_blank" rel="noopener noreferrer">GONSIN virtual showroom <span aria-hidden="true">↗</span></a>
@@ -113,7 +113,7 @@
           <p id="result-count" role="status" aria-live="polite" aria-atomic="true"></p>
           <div class="results-actions">
             <button class="text-link" type="button" id="reset-filters" hidden>Clear filters</button>
-            <a class="text-link" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=3301d8d0834361d3e0d46756" download="GONSIN-Social-Media-Library.xlsx">Download Excel <span aria-hidden="true">↓</span></a>
+            <a class="text-link" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=c46444e4a6f01a459f8211f6" download="GONSIN-Social-Media-Library.xlsx">Download Excel <span aria-hidden="true">↓</span></a>
           </div>
         </div>
         <div class="resources-grid" id="resources-grid"></div>
@@ -228,10 +228,20 @@
           <p class="excel-hint">Select one or more types. Leave them unchecked to include every type.</p>
           <div class="excel-type-list" id="excel-types"></div>
         </fieldset>
+        <fieldset class="excel-types" aria-describedby="excel-link-hint">
+          <legend>Link types</legend>
+          <p class="excel-hint" id="excel-link-hint">Selected link types control the link columns and include records with any matching link. Leave all unchecked to include every link type.</p>
+          <div class="excel-type-list">
+            <label class="excel-type-option"><input type="checkbox" name="link-type" value="social">Social media</label>
+            <label class="excel-type-option"><input type="checkbox" name="link-type" value="website">Official website</label>
+            <label class="excel-type-option"><input type="checkbox" name="link-type" value="drive">Google Drive</label>
+            <label class="excel-type-option"><input type="checkbox" name="link-type" value="canva">Canva</label>
+          </div>
+        </fieldset>
         <p class="excel-status" id="excel-status" role="status" aria-live="polite" aria-atomic="true"></p>
         <div class="excel-download-actions">
           <button class="button excel-download-primary" id="download-selection" type="submit" disabled>Download selection <span aria-hidden="true">↓</span></button>
-          <a class="text-link" id="download-full-workbook" href="GONSIN-Social-Media-Library.xlsx?v=3301d8d0834361d3e0d46756" download="GONSIN-Social-Media-Library.xlsx">Download all</a>
+          <a class="text-link" id="download-full-workbook" href="GONSIN-Social-Media-Library.xlsx?v=c46444e4a6f01a459f8211f6" download="GONSIN-Social-Media-Library.xlsx">Download all</a>
         </div>
       </form>
     </div>

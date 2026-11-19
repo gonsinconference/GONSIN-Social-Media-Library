@@ -1,9 +1,19 @@
 "use strict";
 
 (() => {
-  const headers = ["Date", "Type", "Title", "Related Model", "Google drive", "LinkedIn", "Facebook", "YouTube", "Canva Link"];
+  const detailColumns = [["Date", 14], ["Type", 20], ["Title", 72], ["Related Model", 38]];
+  const linkColumns = {
+    drive: ["Google drive", 34],
+    linkedin: ["LinkedIn", 34],
+    facebook: ["Facebook", 34],
+    youtube: ["YouTube", 34],
+    canva: ["Canva Link", 33],
+    website: ["Website", 42],
+  };
+  const downloadLinkKeys = Object.keys(linkColumns);
+  const linkKeys = downloadLinkKeys.filter(key => key !== "website");
+  const headers = [...detailColumns, ...linkKeys.map(key => linkColumns[key])].map(([name]) => name);
   const requiredHeaders = headers.slice(0, -1);
-  const linkKeys = ["drive", "linkedin", "facebook", "youtube", "canva"];
   const linkHosts = {
     drive: ["drive.google.com", "docs.google.com"],
     linkedin: ["www.linkedin.com", "linkedin.com", "lnkd.in"],
@@ -340,27 +350,43 @@
     return assignment + JSON.stringify(catalog, null, 2).replace(/</g, "\\u003c") + ";\n";
   }
 
-  function spreadsheetRows(records) {
-    return [headers, ...records.map(record => [
+  function downloadRecords(records, catalog) {
+    const websites = new Map(catalog.items.map(item => [item.id, item.links.website]));
+    const occurrences = new Map();
+    const posts = records.map(record => {
+      const id = itemId(record.date, record.title, occurrences);
+      const website = websites.get(id);
+      return website ? { ...record, links: { ...record.links, website } } : record;
+    });
+    const articles = catalog.items.filter(item => item.category === "articles").map(item => ({
+      date: item.date, sourceType: "Official article", title: item.title, model: item.model || "", links: item.links,
+    }));
+    return [...posts, ...articles].sort((a, b) => b.date.localeCompare(a.date));
+  }
+
+  function spreadsheetRows(records, selectedLinks = linkKeys) {
+    const names = [...detailColumns, ...selectedLinks.map(key => linkColumns[key])].map(([name]) => name);
+    return [names, ...records.map(record => [
       Math.round((Date.parse(record.date + "T00:00:00Z") - Date.UTC(1899, 11, 30)) / 86400000),
       record.sourceType,
       record.title,
       record.model,
-      ...linkKeys.map(key => record.links[key] || ""),
+      ...selectedLinks.map(key => record.links[key] || ""),
     ])];
   }
 
-  function makeWorkbook(records, XLSX) {
-    const rows = spreadsheetRows(records);
+  function makeWorkbook(records, XLSX, selectedLinks = linkKeys) {
+    const rows = spreadsheetRows(records, selectedLinks);
+    const [names] = rows;
     const sheet = XLSX.utils.aoa_to_sheet(rows);
-    sheet["!cols"] = [14, 20, 72, 38, 34, 34, 34, 34, 33].map(wch => ({ wch }));
+    sheet["!cols"] = [...detailColumns, ...selectedLinks.map(key => linkColumns[key])].map(([, wch]) => ({ wch }));
     sheet["!autofilter"] = { ref: sheet["!ref"] };
     rows.slice(1).forEach((row, i) => {
       sheet["A" + (i + 2)].z = "yyyy-mm-dd";
-      for (let c = 4; c < headers.length; c++) {
+      for (let c = detailColumns.length; c < names.length; c++) {
         if (!row[c]) continue;
         const cell = sheet[XLSX.utils.encode_cell({ r: i + 1, c })];
-        cell.l = { Target: row[c], Tooltip: headers[c] };
+        cell.l = { Target: row[c], Tooltip: names[c] };
       }
     });
     const workbook = XLSX.utils.book_new();
@@ -370,6 +396,7 @@
 
   globalThis.GonsinWeekly = {
     readFile, readBook, readRecords, readHeader, formatDate, urlFromCell, splitLinks, publicUrl, titleKey,
-    readMarketingNews, normalizeNews, makeCatalog, encodeCatalog, makeWorkbook, spreadsheetRows, headers, filename, mime,
+    readMarketingNews, normalizeNews, makeCatalog, encodeCatalog, downloadRecords, downloadLinkKeys,
+    makeWorkbook, spreadsheetRows, headers, filename, mime,
   };
 })();

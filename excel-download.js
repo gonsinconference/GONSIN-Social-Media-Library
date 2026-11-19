@@ -19,12 +19,6 @@
   const calendarDays = document.querySelector("#calendar-days");
   const calendarButtons = [...document.querySelectorAll("[data-calendar-for]")];
   const release = new URL(fullWorkbook.href).searchParams.get("v");
-  const linkGroups = new Map([
-    ["social", ["linkedin", "facebook", "youtube"]],
-    ["website", ["website"]],
-    ["drive", ["drive"]],
-    ["canva", ["canva"]],
-  ]);
   const isoDate = /^\d{4}-\d{2}-\d{2}$/;
   const dateFormat = new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeZone: "UTC" });
   const monthFormat = new Intl.DateTimeFormat("en-US", { month: "long", timeZone: "UTC" });
@@ -137,7 +131,7 @@
     }
     const values = new FormData(form);
     const types = new Set(values.getAll("type"));
-    const links = new Set(values.getAll("link-type").flatMap(group => linkGroups.get(group) || []));
+    const links = new Set(values.getAll("link-type"));
     selectedLinks = window.GonsinWeekly.downloadLinkKeys.filter(key => !links.size || links.has(key));
     selection = records.filter(row =>
       (!start || row.date >= start) && (!end || row.date <= end)

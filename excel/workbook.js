@@ -8,7 +8,7 @@
     facebook: ["Facebook", 34],
     youtube: ["YouTube", 34],
     canva: ["Canva Link", 33],
-    website: ["Website", 42],
+    website: ["GONSIN.com", 42],
   };
   const downloadLinkKeys = Object.keys(linkColumns);
   const linkKeys = downloadLinkKeys.filter(key => key !== "website");

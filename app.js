@@ -91,7 +91,7 @@ function platformLinks(item) {
 function renderArchive() {
   const resources = catalog.items.filter(item => item.category !== "articles");
   document.querySelector("#post-count").textContent = resources.length;
-  document.querySelector("#article-count").textContent = catalog.items.filter(item => item.links.website).length;
+  document.querySelector("#article-count").textContent = catalog.items.length - resources.length;
 
   const dates = resources.map(item => item.date).sort();
   if (!dates.length) return;
@@ -188,8 +188,7 @@ function appendPage(focusNext = false) {
 function renderResults() {
   const terms = normalize(search.value).split(" ").filter(Boolean);
   results = catalog.items.filter(item => {
-    const inCategory = selectedCategory === "all"
-      || (selectedCategory === "articles" ? Boolean(item.links.website) : item.category === selectedCategory);
+    const inCategory = selectedCategory === "all" || item.category === selectedCategory;
     return inCategory
       && (!year.value || item.date.startsWith(year.value))
       && (!platform.value || item.links[platform.value])

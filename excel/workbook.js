@@ -216,7 +216,7 @@
 
   function readMarketingNews(buffer, XLSX) {
     const book = XLSX.read(new Uint8Array(buffer), { type: "array", cellHTML: false, cellText: false });
-    const name = book.SheetNames.find(value => headerKey(value) === "news & emails");
+    const name = book.SheetNames.find(value => headerKey(value).replace(/\s*&\s*/, "&") === "news&emails");
     if (!name) return null;
     const sheet = book.Sheets[name];
     const header = readHeader(sheet, XLSX, ["Date", "Title", "Website"]);
@@ -241,30 +241,36 @@
       const website = publicUrl(row?.website, "website");
       const date = typeof row?.date === "string" ? formatDate(row.date) : "";
       const title = clean(row?.title);
-      if (website && date && title && !hasInternalAddress(title) && !articles.has(website)) {
-        articles.set(website, { date, title, website });
-      }
+      if (!website || !date || !title || hasInternalAddress(title)) continue;
+      const key = linkIdentity(website);
+      if (!articles.has(key)) articles.set(key, { date, title, website });
     }
     return [...articles.values()];
   }
 
-  function itemId(date, title, occurrences) {
+  function itemId(date, title, occurrences, kind = "media") {
     const stem = title.normalize("NFKD").replace(/[^\x00-\x7f]/g, "").toLowerCase()
       .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
     let short = stem.slice(0, 58).replace(/-+$/, "");
     if (stem.length > 58 && short.includes("-")) short = short.slice(0, short.lastIndexOf("-"));
-    const base = "media-" + date + "-" + (short || "post");
+    const base = kind + "-" + date + "-" + (short || "post");
     const count = (occurrences.get(base) || 0) + 1;
     occurrences.set(base, count);
     return count === 1 ? base : base + "-" + count;
   }
 
   function refreshNews(items, news, supplements, occurrences) {
-    const oldIdByWebsite = new Map();
+    const oldPostIdByWebsite = new Map();
     for (const [id, visual] of Object.entries(supplements.items)) {
-      if (visual.website) oldIdByWebsite.set(linkIdentity(visual.website), id);
+      if (visual.website) oldPostIdByWebsite.set(linkIdentity(visual.website), id);
     }
-    for (const item of supplements.articles || []) oldIdByWebsite.set(linkIdentity(item.links.website), item.id);
+    const usedIds = new Set(items.map(item => item.id));
+    const oldArticleIdByWebsite = new Map();
+    for (const item of supplements.articles || []) {
+      if (!item.links.website || usedIds.has(item.id)) continue;
+      oldArticleIdByWebsite.set(linkIdentity(item.links.website), item.id);
+      usedIds.add(item.id);
+    }
     const brandById = new Map(items.map(item => [item.id, item]));
     const brandByTitle = new Map();
     for (const item of items) {
@@ -274,18 +280,22 @@
       delete item.links.website;
     }
     for (const article of news) {
-      const known = oldIdByWebsite.get(linkIdentity(article.website));
+      const key = linkIdentity(article.website);
       const candidates = brandByTitle.get(titleKey(article.title)) || [];
       const date = Date.parse(article.date);
       const closest = candidates.reduce((best, item) => (
         !best || Math.abs(Date.parse(item.date) - date) < Math.abs(Date.parse(best.date) - date) ? item : best
       ), null);
-      const post = brandById.get(known) || closest;
-      if (post && !post.links.website) {
-        post.links.website = article.website;
-        continue;
+      const post = brandById.get(oldPostIdByWebsite.get(key)) || closest;
+      if (post && !post.links.website) post.links.website = article.website;
+
+      let id = oldArticleIdByWebsite.get(key);
+      if (!id) {
+        do {
+          id = itemId(article.date, article.title, occurrences, "article");
+        } while (usedIds.has(id));
+        usedIds.add(id);
       }
-      const id = known && !brandById.has(known) ? known : itemId(article.date, article.title, occurrences);
       items.push({
         id, date: article.date, title: article.title, category: "articles", type: "Article",
         links: { website: article.website },
@@ -306,7 +316,7 @@
       return item;
     });
     const ids = new Set(items.map(item => item.id));
-    if (news?.length) refreshNews(items, news, supplements, occurrences);
+    if (news) refreshNews(items, news, supplements, occurrences);
     else items.push(...(supplements.articles || []));
     items.sort((a, b) => b.date.localeCompare(a.date));
     return { featured: supplements.featured.filter(feature => feature.category || ids.has(feature.id)), items };

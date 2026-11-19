@@ -225,11 +225,16 @@
     const lastRow = XLSX.utils.decode_range(sheet["!ref"]).e.r;
     const rows = [];
     for (let r = header.row + 1; r <= lastRow; r++) {
-      const read = key => sheet[XLSX.utils.encode_cell({ r, c: header.columns.get(key) })];
+      const read = key => {
+        const c = header.columns.get(key);
+        return c === undefined ? undefined : sheet[XLSX.utils.encode_cell({ r, c })];
+      };
       rows.push({
         website: urlFromCell(read("website")),
         date: formatDate(read("date")?.v, XLSX, date1904),
         title: read("title")?.v,
+        drive: urlFromCell(read("google drive")),
+        canva: urlFromCell(read("canva link")),
       });
     }
     return normalizeNews(rows);
@@ -243,7 +248,13 @@
       const title = clean(row?.title);
       if (!website || !date || !title || hasInternalAddress(title)) continue;
       const key = linkIdentity(website);
-      if (!articles.has(key)) articles.set(key, { date, title, website });
+      if (articles.has(key)) continue;
+      const article = { date, title, website };
+      for (const platform of ["drive", "canva"]) {
+        const url = splitLinks(row[platform]).map(value => publicUrl(value, platform)).find(Boolean);
+        if (url) article[platform] = url;
+      }
+      articles.set(key, article);
     }
     return [...articles.values()];
   }
@@ -296,9 +307,12 @@
         } while (usedIds.has(id));
         usedIds.add(id);
       }
+      const links = { website: article.website };
+      if (article.drive) links.drive = article.drive;
+      if (article.canva) links.canva = article.canva;
       items.push({
         id, date: article.date, title: article.title, category: "articles", type: "Article",
-        links: { website: article.website },
+        links,
       });
     }
   }

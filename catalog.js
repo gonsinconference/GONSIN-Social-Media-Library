@@ -296,7 +296,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/connecting-every-campus-gonsin-cloud-based-audio-recording-management-for-education.html"
+        "website": "https://www.gonsin.com/connecting-every-campus-gonsin-cloud-based-audio-recording-management-for-education.html",
+        "drive": "https://drive.google.com/drive/folders/11HR076fh2YPRyMv5td8VqKkH1gZy2DbC?usp=drive_link",
+        "canva": "https://canva.link/b4uc65ie3pb4byr"
       }
     },
     {
@@ -397,7 +399,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-presents-its-ai-conference-ecosystem-at-the-140th-canton-fair.html"
+        "website": "https://www.gonsin.com/gonsin-presents-its-ai-conference-ecosystem-at-the-140th-canton-fair.html",
+        "drive": "https://drive.google.com/drive/folders/1mznPDgFIHC2VqKKEVGFQ5j_4t8CYQB2w?usp=drive_link",
+        "canva": "https://canva.link/faoxlq1ywm42sel"
       }
     },
     {
@@ -495,7 +499,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-10000n-paperless-building-an-integrated-av-workflow-for-modern-meeting-spaces.html"
+        "website": "https://www.gonsin.com/gonsin-10000n-paperless-building-an-integrated-av-workflow-for-modern-meeting-spaces.html",
+        "drive": "https://drive.google.com/drive/folders/1_JDb-_cSzyiGMLYert2HaL6tDtmG2NoA?usp=drive_link",
+        "canva": "https://canva.link/noe1dgj9t4epw9r"
       }
     },
     {
@@ -672,7 +678,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-10000n-seamless-compatible-wired-and-wireless-conference-system-built-for-diverse-meeting-environments.html"
+        "website": "https://www.gonsin.com/gonsin-10000n-seamless-compatible-wired-and-wireless-conference-system-built-for-diverse-meeting-environments.html",
+        "drive": "https://drive.google.com/drive/folders/1AcDugZL4DMR6GraeBHITzEtEaVRb9gQ3?usp=drive_link",
+        "canva": "https://canva.link/p0jnn8no8uvjmfa"
       }
     },
     {
@@ -789,7 +797,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/beyond-paperless-building-a-smarter-av-environment-for-congresses-and-parliaments.html"
+        "website": "https://www.gonsin.com/beyond-paperless-building-a-smarter-av-environment-for-congresses-and-parliaments.html",
+        "drive": "https://drive.google.com/drive/folders/1pieM-f-ajAMLgzMYbIJplek_SWpbbNj-?usp=drive_link",
+        "canva": "https://canva.link/87f19pb2qhfkqmw"
       }
     },
     {
@@ -857,7 +867,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-10000n-series-brings-flexible-reliable-audio-to-modern-education-spaces.html"
+        "website": "https://www.gonsin.com/gonsin-10000n-series-brings-flexible-reliable-audio-to-modern-education-spaces.html",
+        "drive": "https://drive.google.com/drive/folders/1__4oHXdbXqtl020Qj-wzOjN59x_Crj-U?usp=drive_link",
+        "canva": "https://canva.link/lyg6ib3r3drdebh"
       }
     },
     {
@@ -952,7 +964,8 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-ai-simultaneous-interpretation-solution-1.html"
+        "website": "https://www.gonsin.com/gonsin-ai-simultaneous-interpretation-solution-1.html",
+        "canva": "https://canva.link/o73us31wrwwd72e"
       }
     },
     {
@@ -1015,7 +1028,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-audio-recording-cloud-management-for-healthcare.html"
+        "website": "https://www.gonsin.com/gonsin-audio-recording-cloud-management-for-healthcare.html",
+        "drive": "https://drive.google.com/drive/folders/1vVRySVE2bCgZgSN8xgJ_IDb4PlcK8ZJ0?usp=drive_link",
+        "canva": "https://canva.link/sgp9o0g1kzrsngp"
       }
     },
     {
@@ -1094,7 +1109,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/av-challenges-and-solutions-for-courtrooms-parliaments-and-government-meetings.html"
+        "website": "https://www.gonsin.com/av-challenges-and-solutions-for-courtrooms-parliaments-and-government-meetings.html",
+        "drive": "https://drive.google.com/drive/folders/1PAhi-hIOthzCLFAYeF7Q_Lu4PQ5qClyP?usp=drive_link",
+        "canva": "https://canva.link/5hvc8u7nwmbr8l1"
       }
     },
     {
@@ -1160,7 +1177,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-introduces-cloud-audio-recording-solution-for-multi-site-organizations.html"
+        "website": "https://www.gonsin.com/gonsin-introduces-cloud-audio-recording-solution-for-multi-site-organizations.html",
+        "drive": "https://drive.google.com/drive/folders/1dn2h7_AapwkE4GsNnPJ6jgfqRq5N6saU?usp=drive_link",
+        "canva": "https://canva.link/gvhxkkp5cayul8w"
       }
     },
     {
@@ -1241,7 +1260,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-smart-paperless-collaboration-for-healthcare.html"
+        "website": "https://www.gonsin.com/gonsin-smart-paperless-collaboration-for-healthcare.html",
+        "drive": "https://drive.google.com/drive/folders/1LxQj0WgfxQHnd-EFCwUmwnZdRhbDgQhN?usp=drive_link",
+        "canva": "https://canva.link/vwzr2fqgjawesyv"
       }
     },
     {
@@ -1321,7 +1342,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/beyond-costs-one-server-for-complete-conference-solutions.html"
+        "website": "https://www.gonsin.com/beyond-costs-one-server-for-complete-conference-solutions.html",
+        "drive": "https://drive.google.com/drive/folders/1sLL1zi8SnYkAVTysqU8py1E_ipsGjpsl?usp=drive_link",
+        "canva": "https://canva.link/kcil1rwnj7pc2au"
       }
     },
     {
@@ -1444,7 +1467,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-paperless-conference-solutions-for-research-institutes.html"
+        "website": "https://www.gonsin.com/gonsin-paperless-conference-solutions-for-research-institutes.html",
+        "drive": "https://drive.google.com/drive/folders/1lRl_bm9RpuFtgKZjVicZ0pSy7aSAkX_n?usp=drive_link",
+        "canva": "https://canva.link/acdy2roeride0tl"
       }
     },
     {
@@ -1484,7 +1509,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-wireless-simultaneous-interpretation-integration-solution-for-large-complex-venues-one-server-two-systems-seamless-integration.html"
+        "website": "https://www.gonsin.com/gonsin-wireless-simultaneous-interpretation-integration-solution-for-large-complex-venues-one-server-two-systems-seamless-integration.html",
+        "drive": "https://drive.google.com/drive/folders/1Q6zPtZixlqBG0WNNrlDmicCOhLu_2Ido?usp=drive_link",
+        "canva": "https://canva.link/v431i1h7jwvd320"
       }
     },
     {
@@ -1642,7 +1669,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-comprehensive-av-solutions-for-sports.html"
+        "website": "https://www.gonsin.com/gonsin-comprehensive-av-solutions-for-sports.html",
+        "drive": "https://drive.google.com/drive/folders/1KOmOrljRUu_8UD74hLNeyWH33HgNSOWv?usp=drive_link",
+        "canva": "https://canva.link/ow2wj07ur4wiwlq"
       }
     },
     {
@@ -1732,7 +1761,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/ai-paperless-conference-solutions-for-universities.html"
+        "website": "https://www.gonsin.com/ai-paperless-conference-solutions-for-universities.html",
+        "drive": "https://drive.google.com/drive/folders/1Ekz74g2ZAH70w1dzlkJ8NyAT79H0qsQr?usp=drive_link",
+        "canva": "https://canva.link/vrwi50atek2axg2"
       }
     },
     {
@@ -1824,7 +1855,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/how-medical-conferences-can-improve-collaboration-with-smart-av-systems.html"
+        "website": "https://www.gonsin.com/how-medical-conferences-can-improve-collaboration-with-smart-av-systems.html",
+        "drive": "https://drive.google.com/drive/folders/1jp-m_wLlTkjpQCO_GGBrR9LpC5zmWXnd?usp=drive_link",
+        "canva": "https://canva.link/odb2jybotgzrdyx"
       }
     },
     {
@@ -1963,7 +1996,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gathering-in-canton-innovating-with-ai-gonsin-shines-at-prolight-sound-guangzhou-with-ai-conference-solutions.html"
+        "website": "https://www.gonsin.com/gathering-in-canton-innovating-with-ai-gonsin-shines-at-prolight-sound-guangzhou-with-ai-conference-solutions.html",
+        "drive": "https://drive.google.com/drive/folders/1h7BD5QtHPqYRZKmFLqcPv1-u5V-n4vTk?usp=drive_link",
+        "canva": "https://canva.link/cq4q819tq6agdp8"
       }
     },
     {
@@ -2063,7 +2098,8 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/notice-of-headquarters-relocation.html"
+        "website": "https://www.gonsin.com/notice-of-headquarters-relocation.html",
+        "drive": "https://drive.google.com/drive/folders/1_AMeCWjgxsQ8Ygl16Jywbdkf5rMN3pdR?usp=drive_link"
       }
     },
     {
@@ -2386,7 +2422,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/multi-form-integrated-voting-solution-for-large-conferences.html"
+        "website": "https://www.gonsin.com/multi-form-integrated-voting-solution-for-large-conferences.html",
+        "drive": "https://drive.google.com/drive/folders/1l5ZKg4Jj9BdOHpEQogIDTFCwuvFMTxe9?usp=drive_link",
+        "canva": "https://canva.link/bmmvs3zqd17tuwu"
       }
     },
     {
@@ -2502,7 +2540,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/how-gonsin-powers-flexible-layouts-for-united-nations-conferences.html"
+        "website": "https://www.gonsin.com/how-gonsin-powers-flexible-layouts-for-united-nations-conferences.html",
+        "drive": "https://drive.google.com/drive/folders/1qxaF_RtyUVZ_V6iX9guXA81OLYHT166O?usp=drive_link",
+        "canva": "https://canva.link/b614z5brib0ncpk"
       }
     },
     {
@@ -2647,7 +2687,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-wireless-simultaneous-interpretation-integration-solution-for-large-complex-venues.html"
+        "website": "https://www.gonsin.com/gonsin-wireless-simultaneous-interpretation-integration-solution-for-large-complex-venues.html",
+        "drive": "https://drive.google.com/drive/folders/186Ansl7T2HeZ56NoMp0Qj6HKia2sOpjO?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAHEWtS2d5Y/iKohvSz0a1zVnThjCIfjnw/edit?utm_content=DAHEWtS2d5Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -2723,7 +2765,8 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/isle-2026-gonsin-brings-ai-innovation-to-the-professional-av-industry.html"
+        "website": "https://www.gonsin.com/isle-2026-gonsin-brings-ai-innovation-to-the-professional-av-industry.html",
+        "drive": "https://drive.google.com/drive/folders/1nHMQIgQcMrE53V0zTttrzj8H2eJyZ3Oa?usp=drive_link"
       }
     },
     {
@@ -3005,7 +3048,8 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-at-ise-2026-wrap-up-connecting-global-av-with-ai.html"
+        "website": "https://www.gonsin.com/gonsin-at-ise-2026-wrap-up-connecting-global-av-with-ai.html",
+        "drive": "https://drive.google.com/drive/folders/186Ansl7T2HeZ56NoMp0Qj6HKia2sOpjO?usp=drive_link"
       }
     },
     {
@@ -3015,7 +3059,8 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-global-debut-of-the-ai-conference-ecosystem-at-ise-2026.html"
+        "website": "https://www.gonsin.com/gonsin-global-debut-of-the-ai-conference-ecosystem-at-ise-2026.html",
+        "drive": "https://drive.google.com/drive/folders/1PJIbpDMtsqCtvyGXXPxsPrF21A8i_mZu?usp=drive_link"
       }
     },
     {
@@ -3065,7 +3110,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-voting-solution-full-scenario-coverage-decisions-in-seconds.html"
+        "website": "https://www.gonsin.com/gonsin-voting-solution-full-scenario-coverage-decisions-in-seconds.html",
+        "drive": "https://drive.google.com/drive/folders/1hgsZFUlN-OKG_uz14c2o8daCjoSaDT3F?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG_li26pAw/Mm9j8yOsERRFDV-2lGSeeg/edit?utm_content=DAG_li26pAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -3116,7 +3163,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-paperless-ultra-stable-architecture--flexible-installation-options.html"
+        "website": "https://www.gonsin.com/gonsin-paperless-ultra-stable-architecture--flexible-installation-options.html",
+        "drive": "https://drive.google.com/drive/folders/1B-zTNyhs_kl63gJi5xwUYrjy6yVCWS9k?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG_Gc7xUUI/My6WRtUxiGCpgSW9WyNoaQ/edit?utm_content=DAG_Gc7xUUI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -3178,7 +3227,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-converged-conference-architecture-one-system-multiple-forms.html"
+        "website": "https://www.gonsin.com/gonsin-converged-conference-architecture-one-system-multiple-forms.html",
+        "drive": "https://drive.google.com/drive/folders/1LG0OdVmUeJwh7oFuYdBQFZJx5Dn008wm?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG-ciwHXSs/MYJItY-HXg4xQF8dR-LO2w/edit?utm_content=DAG-ciwHXSs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -3254,7 +3305,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsins-integrated-guide-to-conference-voting-systems-for-large-scale-conferences.html"
+        "website": "https://www.gonsin.com/gonsins-integrated-guide-to-conference-voting-systems-for-large-scale-conferences.html",
+        "drive": "https://drive.google.com/drive/folders/1ayyvw_1lZxUHGPl62vYzn-YP-r0n0Sz-?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG9y55QNHs/xqNUdXdpCO3CWSNtTRP3AA/edit?utm_content=DAG9y55QNHs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -3780,7 +3833,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-smart-empowerment-for-the-conference-management-and-operation.html"
+        "website": "https://www.gonsin.com/gonsin-smart-empowerment-for-the-conference-management-and-operation.html",
+        "drive": "https://drive.google.com/drive/folders/10C1dJjIFkB64XkqZrln7Llp36PwBR6Su?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG4jcvFHHk/VUoRjNsHxXASYuNGJJKwMQ/edit?utm_content=DAG4jcvFHHk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -3853,7 +3908,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-s-intelligent-audio-solutions-for-flawless-sports-events.html"
+        "website": "https://www.gonsin.com/gonsin-s-intelligent-audio-solutions-for-flawless-sports-events.html",
+        "drive": "https://drive.google.com/drive/folders/1o6IjNJDP4vax0U6OLJNSqC_0QRy6XmVo?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG35fCOhRo/vRv9LwOlGk2rWpar9SC4kw/edit?utm_content=DAG35fCOhRo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -3913,7 +3970,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-tailored-the-ai-conference-solutions-for-every-scenario.html"
+        "website": "https://www.gonsin.com/gonsin-tailored-the-ai-conference-solutions-for-every-scenario.html",
+        "drive": "https://drive.google.com/drive/folders/1NbKp5UWQFO0yESS35-vtKYl8uW6X6ZHT?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG3OSUC5Cw/GJWJ88lWOQnMQe9Ngcpuzg/edit?utm_content=DAG3OSUC5Cw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -3986,7 +4045,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-supercharges-the-global-av-rental-business.html"
+        "website": "https://www.gonsin.com/gonsin-supercharges-the-global-av-rental-business.html",
+        "drive": "https://drive.google.com/drive/folders/1rOFXDyAmmySi5GyP_U2eQqWqg5K3OU-Q?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG2gNy_AA0/pwggt7_8SKH7_u5K0P_EBg/edit?utm_content=DAG2gNy_AA0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4032,7 +4093,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-financial-av-intelligent-solutions.html"
+        "website": "https://www.gonsin.com/gonsin-financial-av-intelligent-solutions.html",
+        "drive": "https://drive.google.com/drive/folders/1JE1TBmPHTmshUCshblp1zpp5dPHce8PK?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG16tAXS5c/jrQ-B3zplJf0Px63vbvmzg/edit?utm_content=DAG16tAXS5c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4092,7 +4155,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-simultaneous-interpretation-dual-architecture-for-diverse-conference-scenarios.html"
+        "website": "https://www.gonsin.com/gonsin-simultaneous-interpretation-dual-architecture-for-diverse-conference-scenarios.html",
+        "drive": "https://drive.google.com/drive/folders/18TZtrrb3l8ahhYcc17xEB-bwCsojIbH4?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG28uesnCw/37akgvvSpMDJkxS_MiTRsw/edit?utm_content=DAG28uesnCw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4178,7 +4243,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-u-shaped-room-av-solutions.html"
+        "website": "https://www.gonsin.com/gonsin-u-shaped-room-av-solutions.html",
+        "drive": "https://drive.google.com/drive/folders/1AJaUJTtiFNtXUmMI5a3BHDorZPKkZ46P?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG28v1qejM/AvCZ9k6ls1mbxZtlmDT--w/edit?utm_content=DAG28v1qejM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4250,7 +4317,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-ensures-seamless-communication-at-iatf2025.html"
+        "website": "https://www.gonsin.com/gonsin-ensures-seamless-communication-at-iatf2025.html",
+        "drive": "https://drive.google.com/drive/folders/1UZ72vHoHXIVlyMaWP1zZ6yGAQ9WxU7Fw?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAGydR3fmsU/UZqleNNBjVlI80ITEyzGYw/edit?utm_content=DAGydR3fmsU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4299,7 +4368,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-delivers-secure-conference-solutions-for-military-and-defense.html"
+        "website": "https://www.gonsin.com/gonsin-delivers-secure-conference-solutions-for-military-and-defense.html",
+        "drive": "https://drive.google.com/drive/folders/1cB2LGPMPYs-XZ337vWW_bfCmN5GuLX5P?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG28nmec7I/JhngnTfcy91YDnJF7f7tKg/view?utm_content=DAG28nmec7I&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h41ef411085"
       }
     },
     {
@@ -4356,7 +4427,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-driving-global-energy-industrys-tech-transformation.html"
+        "website": "https://www.gonsin.com/gonsin-driving-global-energy-industrys-tech-transformation.html",
+        "drive": "https://drive.google.com/drive/folders/1X3BL1uV8bJNF7crh67QCT1rUK6QyFhlY?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG2804mRFc/ii97Bss98ihO07LS46fKpQ/edit?utm_content=DAG2804mRFc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4441,7 +4514,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-powers-the-european-youth-olympic-festival-eyof-skopje-2025.html"
+        "website": "https://www.gonsin.com/gonsin-powers-the-european-youth-olympic-festival-eyof-skopje-2025.html",
+        "drive": "https://drive.google.com/drive/folders/1mojVyMVv68i4g2oOS1NtxwYy_ofwfyqP?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAGxJTBQyTk/9awRCJW62iofqyElCY7Q5A/edit?utm_content=DAGxJTBQyTk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4512,7 +4587,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/the-first-ai-agent-in-conferencing-gonsin-ai.html"
+        "website": "https://www.gonsin.com/the-first-ai-agent-in-conferencing-gonsin-ai.html",
+        "drive": "https://drive.google.com/drive/folders/1esKVIYgOtmaWv5vujOYTHkrmMCYx8oit?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG28-fZZOk/tXM0UDzqubXgQuDjOJtsTQ/edit?utm_content=DAG28-fZZOk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4645,7 +4722,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/GONSIN-av-solutions-for-command-center.html"
+        "website": "https://www.gonsin.com/GONSIN-av-solutions-for-command-center.html",
+        "drive": "https://drive.google.com/drive/folders/1ZUMouvBhfPUoJjHJddcHNsC8A2XWSb6M?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG280-cGr0/V92c_gRAUhl_L0G89KotKA/edit?utm_content=DAG280-cGr0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4705,7 +4784,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/GONSIN-AI-is-Launched.html"
+        "website": "https://www.gonsin.com/GONSIN-AI-is-Launched.html",
+        "drive": "https://drive.google.com/drive/folders/1q3J3SrwB1Pu4PEozl5iiKq89dY0V8K-Y?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG289uXjrk/EvqLXI7TSVZolZgG5YgiEQ/edit?utm_content=DAG289uXjrk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4754,7 +4835,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-ai-powered-remote-video-conference-solution.html"
+        "website": "https://www.gonsin.com/gonsin-ai-powered-remote-video-conference-solution.html",
+        "drive": "https://drive.google.com/drive/folders/1fd2WIi60JRZrMMnybkOEUfRvu7M6yh_m?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG289m2R_w/sDJupqaybC2fUqwp4wQlEg/edit?utm_content=DAG289m2R_w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4777,7 +4860,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-large-venue-simultaneous-interpretation-solution-for-international-conferences.html"
+        "website": "https://www.gonsin.com/gonsin-large-venue-simultaneous-interpretation-solution-for-international-conferences.html",
+        "drive": "https://drive.google.com/drive/folders/1F8br9vPi7gleIQ5avrngnz8C0N_kdjOA?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG284M3bmY/VbN6OxmPx1KvR3jvzdv1bg/edit?utm_content=DAG284M3bmY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4850,7 +4935,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/drive-business-success-with-gonsin-ai-powered-paperless-conference-solution.html"
+        "website": "https://www.gonsin.com/drive-business-success-with-gonsin-ai-powered-paperless-conference-solution.html",
+        "drive": "https://drive.google.com/drive/folders/1578GlOzuGEpe-SenBZLqwnukT_6sQa7y?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG29UXwQ94/5ui5--M0o3iRGf3rQByiNw/edit?utm_content=DAG29UXwQ94&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -4924,7 +5011,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-tech-empowers-hotel-av-system-upgrading.html"
+        "website": "https://www.gonsin.com/gonsin-tech-empowers-hotel-av-system-upgrading.html",
+        "drive": "https://drive.google.com/drive/folders/1xAlEMigXYOo6EIxsIKIbr9v6aivffNWd?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG29RQF1os/j4hHMYKX6GkyWoBXjWTNsg/edit?utm_content=DAG29RQF1os&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -5024,7 +5113,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-audio-visual-solutions-power-smart-education--facilitating-academic-exchange-and-remote-learning.html"
+        "website": "https://www.gonsin.com/gonsin-audio-visual-solutions-power-smart-education--facilitating-academic-exchange-and-remote-learning.html",
+        "drive": "https://drive.google.com/drive/folders/1onqxOF1oOs2sLeD8OxtIwLkMYFDzia3M?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG29tFh0Ss/Cxe2DJ6E5gBfckIPAG7T2g/edit?utm_content=DAG29tFh0Ss&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -5084,7 +5175,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/secureseamless-smart-gonsins-ai-solutions-in-finance.html"
+        "website": "https://www.gonsin.com/secureseamless-smart-gonsins-ai-solutions-in-finance.html",
+        "drive": "https://drive.google.com/drive/folders/1i8I19UNlStxr7ygQ6SZla0raNzLiSgLW?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG29sZo2ok/nERS1B0PbHEPsX4-6vzkvA/edit?utm_content=DAG29sZo2ok&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -5159,7 +5252,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-fs-fhss-simultaneous-interpretation-system-flexible-solutions-for-diverse-conference.html"
+        "website": "https://www.gonsin.com/gonsin-fs-fhss-simultaneous-interpretation-system-flexible-solutions-for-diverse-conference.html",
+        "drive": "https://drive.google.com/drive/folders/1hiUQZWOyIuImbxuzifn2n2xUEn2m-LeO?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG28jb6myQ/wsaR9JwXuFkipxO443Sc1w/edit?utm_content=DAG28jb6myQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -5312,7 +5407,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-debuts-ai-conference-ecosystem-at-plsg2025.html"
+        "website": "https://www.gonsin.com/gonsin-debuts-ai-conference-ecosystem-at-plsg2025.html",
+        "drive": "https://drive.google.com/drive/folders/1wJymqUayysvKQyn7G1PF0pgN05Zc8E6a?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG29qDlQ_U/zv_-ai2LliGqwYfP6YFwzw/edit?utm_content=DAG29qDlQ_U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -5422,7 +5519,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-new-launch-10000e-series-seamless-compatible-wired-and-wireless-conference-system.html"
+        "website": "https://www.gonsin.com/gonsin-new-launch-10000e-series-seamless-compatible-wired-and-wireless-conference-system.html",
+        "drive": "https://drive.google.com/drive/folders/1z6x-SR5FXn0YMWp9uHovLKxJ7OO2ITMA?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG29gaNbFI/kWUn3HylB2xubehqB9JUeQ/edit?utm_content=DAG29gaNbFI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -5471,7 +5570,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-supports-smart-governance-in-europe.html"
+        "website": "https://www.gonsin.com/gonsin-supports-smart-governance-in-europe.html",
+        "drive": "https://drive.google.com/drive/folders/19dQiEthcCp2l5NZZEDZIOrGZJAihhmSJ?usp=drive_link",
+        "canva": "https://www.canva.com/design/DAG29hjPYwU/JMh5lPeUTyYfvPrYGqbF8w/edit?utm_content=DAG29hjPYwU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -5579,7 +5680,8 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/reimagined-conferences-with-ai-gonsin--ai-powered-conference-ecosystem-provider.html"
+        "website": "https://www.gonsin.com/reimagined-conferences-with-ai-gonsin--ai-powered-conference-ecosystem-provider.html",
+        "drive": "https://drive.google.com/drive/folders/1_Q_NBhZBrwr2FTaaUVi0ykMZJKjX3T-y?usp=drive_link"
       }
     },
     {
@@ -5653,7 +5755,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-revolutionizes-the-round-table-conference-with-seamless-av-integration.html"
+        "website": "https://www.gonsin.com/gonsin-revolutionizes-the-round-table-conference-with-seamless-av-integration.html",
+        "drive": "https://drive.google.com/drive/u/2/folders/12pBAtuXJahohi3_Y1zdDH6aF_1QTZFU9",
+        "canva": "https://www.canva.com/design/DAG29jwTQaQ/j891RpEbQausUqK0lnD-fQ/edit?utm_content=DAG29jwTQaQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -5816,7 +5920,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-enhances-sports-and-cultural-venues-with-advanced-proav-solutions.html"
+        "website": "https://www.gonsin.com/gonsin-enhances-sports-and-cultural-venues-with-advanced-proav-solutions.html",
+        "drive": "https://drive.google.com/drive/u/2/folders/16KpVmsh5-BWCRnXxO6EyFkV1JLe1GXL7",
+        "canva": "https://www.canva.com/design/DAGlC1NqDKo/DKqQOAuEGBfB6v-cYiNESA/edit?utm_content=DAGlC1NqDKo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -5904,7 +6010,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-proav-system-design-for-hospitals-precision-meets-innovation-empowering-smart-healthcare.html"
+        "website": "https://www.gonsin.com/gonsin-proav-system-design-for-hospitals-precision-meets-innovation-empowering-smart-healthcare.html",
+        "drive": "https://drive.google.com/drive/u/2/folders/1rUInM9L_EfW6qRRI2_FdG2Q9nD8aqIfH",
+        "canva": "https://www.canva.com/design/DAG2gE62Anw/t6B-0mYOWjrrNDSrAElrcw/edit?utm_content=DAG2gE62Anw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -5998,7 +6106,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-justice-projects--boosting-the-efficiency-of-judicial-conferences.html"
+        "website": "https://www.gonsin.com/gonsin-justice-projects--boosting-the-efficiency-of-judicial-conferences.html",
+        "drive": "https://drive.google.com/drive/u/2/folders/1_E43eDw-J34BxF5jr33mYJkH9o2XcO8u",
+        "canva": "https://www.canva.com/design/DAGlCyRMwFk/M87Wtp2Sx96VGKw2Fdm0KA/edit?utm_content=DAGlCyRMwFk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -6058,7 +6168,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-empowers-scientific-research-institutions--smart-seamless-ai-powered-conferences.html"
+        "website": "https://www.gonsin.com/gonsin-empowers-scientific-research-institutions--smart-seamless-ai-powered-conferences.html",
+        "drive": "https://drive.google.com/drive/u/2/folders/1cMesepMtnnIa1fkZ6Vjc-Tw1EGcssbLV",
+        "canva": "https://www.canva.com/design/DAGlCy2FefY/QrWuq3gWvizI9Xx9kDPnJA/edit?utm_content=DAGlCy2FefY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -6254,7 +6366,9 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-secured-two-new-invention-patents.html"
+        "website": "https://www.gonsin.com/gonsin-secured-two-new-invention-patents.html",
+        "drive": "https://drive.google.com/drive/u/2/folders/1IvRWvZEPoCxhZ3Pv4b-r7thgylNbDLnT",
+        "canva": "https://www.canva.com/design/DAG29kJRY9M/AYRlGKeDdTNew3WlyZAvSg/edit?utm_content=DAG29kJRY9M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     },
     {
@@ -6327,7 +6441,8 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-makes-a-mark-at-ise-2025--smart-conferences-smarter-solutions.html"
+        "website": "https://www.gonsin.com/gonsin-makes-a-mark-at-ise-2025--smart-conferences-smarter-solutions.html",
+        "drive": "https://drive.google.com/drive/u/2/folders/1Glsi_HNAnp-eSAB7ZA-Ft3m2F8haz2rj"
       }
     },
     {
@@ -6351,7 +6466,8 @@ window.gonsinCatalog = {
       "category": "articles",
       "type": "Article",
       "links": {
-        "website": "https://www.gonsin.com/gonsin-shines-at-ise2025-smart-conferencing-seamless-integration.html"
+        "website": "https://www.gonsin.com/gonsin-shines-at-ise2025-smart-conferencing-seamless-integration.html",
+        "drive": "https://drive.google.com/drive/u/2/folders/1VmkdG-a5apTyd84HJBkqFL2KGBxfNnC7"
       }
     }
   ]

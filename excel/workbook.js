@@ -44,6 +44,7 @@
   const clean = value => String(value ?? "").trim().replace(/\s+/g, " ");
   const headerKey = value => clean(value).toLowerCase();
   const titleKey = value => clean(value).normalize("NFKC").toLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
+  const newsEntryKey = (date, title) => date + "|" + titleKey(title);
   const hasInternalAddress = value => /\\\\[^\\/\s]+[\\/]|(?:file|smb):[\\/]{2}|\b[A-Z]:\\|\/\/(?:\d{1,3}(?:\.\d{1,3}){3}|localhost)(?=[/:?#\s]|$)/i.test(value);
 
   function formatDate(value, XLSX, date1904) {
@@ -224,7 +225,7 @@
     };
   }
 
-  function readMarketingNews(buffer, XLSX) {
+  function readMarketingNews(buffer, XLSX, includeAssetOnly) {
     const book = XLSX.read(new Uint8Array(buffer), { type: "array", cellHTML: false, cellText: false });
     const name = book.SheetNames.find(value => headerKey(value).replace(/\s*&\s*/, "&") === "news&emails");
     if (!name) return null;
@@ -247,23 +248,25 @@
         canva: urlFromCell(read("canva link")),
       });
     }
-    return normalizeNews(rows);
+    return normalizeNews(rows, includeAssetOnly);
   }
 
-  function normalizeNews(rows) {
+  function normalizeNews(rows, includeAssetOnly = () => false) {
     const articles = new Map();
     for (const row of rows) {
       const website = publicUrl(row?.website, "website");
       const date = typeof row?.date === "string" ? formatDate(row.date) : "";
       const title = clean(row?.title);
-      if (!website || !date || !title || hasInternalAddress(title)) continue;
-      const key = linkIdentity(website);
+      if (!date || !title || hasInternalAddress(title)) continue;
+      if (!website && !includeAssetOnly(date, title)) continue;
+      const key = website ? linkIdentity(website) : newsEntryKey(date, title);
       if (articles.has(key)) continue;
       const article = { date, title, website };
       for (const platform of ["drive", "canva"]) {
         const url = splitLinks(row[platform]).map(value => publicUrl(value, platform)).find(Boolean);
         if (url) article[platform] = url;
       }
+      if (!website && !article.drive && !article.canva) continue;
       articles.set(key, article);
     }
     return [...articles.values()];
@@ -286,10 +289,11 @@
       if (visual.website) oldPostIdByWebsite.set(linkIdentity(visual.website), id);
     }
     const usedIds = new Set(items.map(item => item.id));
-    const oldArticleIdByWebsite = new Map();
+    const oldArticleIdByKey = new Map();
     for (const item of supplements.articles || []) {
-      if (!item.links.website || usedIds.has(item.id)) continue;
-      oldArticleIdByWebsite.set(linkIdentity(item.links.website), item.id);
+      if (usedIds.has(item.id)) continue;
+      const key = item.links.website ? linkIdentity(item.links.website) : newsEntryKey(item.date, item.title);
+      oldArticleIdByKey.set(key, item.id);
       usedIds.add(item.id);
     }
     const brandById = new Map(items.map(item => [item.id, item]));
@@ -301,23 +305,29 @@
       delete item.links.website;
     }
     for (const article of news) {
-      const key = linkIdentity(article.website);
-      const candidates = brandByTitle.get(titleKey(article.title)) || [];
-      const date = Date.parse(article.date);
-      const closest = candidates.reduce((best, item) => (
-        !best || Math.abs(Date.parse(item.date) - date) < Math.abs(Date.parse(best.date) - date) ? item : best
-      ), null);
-      const post = brandById.get(oldPostIdByWebsite.get(key)) || closest;
-      if (post && !post.links.website) post.links.website = article.website;
+      const website = article.website;
+      const websiteKey = website ? linkIdentity(website) : "";
+      if (website) {
+        const candidates = brandByTitle.get(titleKey(article.title)) || [];
+        const date = Date.parse(article.date);
+        const closest = candidates.reduce((best, item) => (
+          !best || Math.abs(Date.parse(item.date) - date) < Math.abs(Date.parse(best.date) - date) ? item : best
+        ), null);
+        const post = brandById.get(oldPostIdByWebsite.get(websiteKey)) || closest;
+        if (post && !post.links.website) post.links.website = website;
+      }
 
-      let id = oldArticleIdByWebsite.get(key);
+      const previousKey = oldArticleIdByKey.has(websiteKey) ? websiteKey : newsEntryKey(article.date, article.title);
+      let id = oldArticleIdByKey.get(previousKey);
+      oldArticleIdByKey.delete(previousKey);
       if (!id) {
         do {
           id = itemId(article.date, article.title, occurrences, "article");
         } while (usedIds.has(id));
         usedIds.add(id);
       }
-      const links = { website: article.website };
+      const links = {};
+      if (website) links.website = website;
       if (article.drive) links.drive = article.drive;
       if (article.canva) links.canva = article.canva;
       items.push({
@@ -396,7 +406,7 @@
 
   globalThis.GonsinWeekly = {
     readFile, readBook, readRecords, readHeader, formatDate, urlFromCell, splitLinks, publicUrl, titleKey,
-    readMarketingNews, normalizeNews, makeCatalog, encodeCatalog, downloadRecords, downloadLinkKeys,
+    readMarketingNews, normalizeNews, newsEntryKey, makeCatalog, encodeCatalog, downloadRecords, downloadLinkKeys,
     makeWorkbook, spreadsheetRows, headers, filename, mime,
   };
 })();

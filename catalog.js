@@ -7,26 +7,93 @@ window.gonsinCatalog = {
     },
     {
       "category": "newsletters",
-      "id": "media-2026-11-12-gonsin-simultaneous-interpretation-multiple-terminal",
+      "id": "media-2026-11-20-apec-2026-in-focus-how-multilateral-meetings-keep",
       "title": "Newsletter",
       "label": "Conference solution",
       "image": {
         "src": "featured-newsletter.jpg",
-        "alt": "GONSIN Simultaneous Interpretation | Multiple Terminal Options for Different Venues"
+        "alt": "APEC 2026 in Focus: How Multilateral Meetings Keep Everyone in the Conversation"
       }
     },
     {
       "category": "projects",
-      "id": "media-2026-11-13-burundi-government-meeting-integrated-conference",
+      "id": "media-2026-11-19-gonsin-supports-multilingual-dialogue-at-the-national",
       "title": "Case Studies",
       "label": "Project archive",
       "image": {
         "src": "featured-case.jpg",
-        "alt": "Burundi Government Meeting | Integrated Conference & Wireless Interpretation Solutions by GONSIN"
+        "alt": "GONSIN Supports Multilingual Dialogue at the National Climate and Biodiversity Dialogue in Kyrgyzstan"
       }
     }
   ],
   "items": [
+    {
+      "id": "media-2026-11-20-apec-2026-in-focus-how-multilateral-meetings-keep",
+      "date": "2026-11-20",
+      "category": "newsletters",
+      "type": "Newsletter",
+      "title": "APEC 2026 in Focus: How Multilateral Meetings Keep Everyone in the Conversation",
+      "links": {
+        "drive": "https://drive.google.com/open?id=1bs47pKiOinAHvFffR8A1SBwFhiZ8SaXM&usp=drive_copy",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7529468207666036736/",
+        "facebook": "https://www.facebook.com/2003Gonsin/posts/pfbid0uK5Sz1qq7MdjGZVTT8LjPCUnhK8KsKxnC5VrBLQHzATejdCdgULvmtnZ41nNrsLVl",
+        "canva": "https://www.canva.com/design/DAHbV2uVDpY/WRYQz4ukzq_r4JzCHuZIcw/edit"
+      }
+    },
+    {
+      "id": "article-2026-11-20-apec-2026-in-focus-how-multilateral-meetings-keep",
+      "date": "2026-11-20",
+      "title": "APEC 2026 in Focus How Multilateral Meetings Keep Everyone in the Conver",
+      "category": "articles",
+      "type": "Article",
+      "links": {
+        "drive": "https://drive.google.com/open?id=1easodLBAcnAFVo8ban-AKMw9m3RQ4lQ3&usp=drive_copy",
+        "canva": "https://www.canva.com/design/DAHbV2uVDpY/WRYQz4ukzq_r4JzCHuZIcw/edit"
+      }
+    },
+    {
+      "id": "media-2026-11-19-gonsin-supports-multilingual-dialogue-at-the-national",
+      "date": "2026-11-19",
+      "category": "projects",
+      "type": "Project case",
+      "title": "GONSIN Supports Multilingual Dialogue at the National Climate and Biodiversity Dialogue in Kyrgyzstan",
+      "links": {
+        "drive": "https://drive.google.com/open?id=1Ma6wk4hyHIdUvjEI-7b4_qgAZQlBe8a-&usp=drive_copy",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7529117648555585536/",
+        "facebook": "https://www.facebook.com/2003Gonsin/posts/pfbid02mZTX5B4Rjzv5PELqYSr76jpFTNbrw86TghUBYvUupYjsmJncXGgSVGgWXhcteNyal",
+        "canva": "https://www.canva.com/design/DAHPh-gKIlQ/AVboicq85nsrPX2VZnCDiA/edit"
+      },
+      "model": "FS Wireless Simultaneous Interpretation System"
+    },
+    {
+      "id": "media-2026-11-18-gonsin-supports-remote-multilingual-meeting",
+      "date": "2026-11-18",
+      "category": "videos",
+      "type": "Video",
+      "title": "GONSIN Supports Remote Multilingual Meeting",
+      "links": {
+        "drive": "https://drive.google.com/open?id=1M-DmjipRJk71TrWiRb8pHDhI69CTfLR3&usp=drive_copy",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7528755240800616448/",
+        "facebook": "https://www.facebook.com/reel/29450136201278637/",
+        "youtube": "https://www.youtube.com/shorts/VlsglTD42Cw",
+        "canva": "https://www.canva.com/design/DAHbUlfZM_g/7EVACWwX-V_gnJ1rz9HXqg/edit"
+      },
+      "model": "FS Wireless Simultaneous Interpretation System"
+    },
+    {
+      "id": "media-2026-11-17-connecting-voices-across-industries-gonsin",
+      "date": "2026-11-17",
+      "category": "videos",
+      "type": "Video",
+      "title": "Connecting Voices Across Industries | GONSIN",
+      "links": {
+        "drive": "https://drive.google.com/open?id=1J02Caso8ULQ2Df_RiONCjUVjEMPewUCP&usp=drive_copy",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7528341862898872322/",
+        "facebook": "https://www.facebook.com/reel/1906435050716829/",
+        "youtube": "https://www.youtube.com/shorts/XSOlJE1wFSw",
+        "canva": "https://www.canva.com/design/DAHbCrLgo8k/hxq-BzkWHXmQVEBaUo5VEQ/edit"
+      }
+    },
     {
       "id": "media-2026-11-16-how-do-you-choose-the-right-simultaneous-interpretation",
       "date": "2026-11-16",

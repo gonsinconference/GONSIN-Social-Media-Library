@@ -109,10 +109,11 @@ function renderHighlights() {
   const template = document.querySelector("#highlight-template");
   const grid = document.querySelector("#highlights-grid");
   grid.replaceChildren();
-  for (const feature of catalog.featured) {
+  for (const feature of catalog.featured ?? []) {
     const item = itemsById.get(feature.id);
     const cover = feature.image || item?.image;
-    if (!cover && !feature.category) continue;
+    const source = cover ? assetPath(cover.src) : item && mediaImage(item);
+    if (!item && !feature.category) continue;
     const tile = template.content.firstElementChild.cloneNode(true);
     if (feature.category) {
       tile.href = view.url({ hash: "library", params: { category: feature.category } });
@@ -121,11 +122,13 @@ function renderHighlights() {
       tile.href = "#" + item.id;
       tile.dataset.resource = item.id;
     }
-    if (cover) {
+    if (source) {
       const image = tile.querySelector("img");
-      image.src = assetPath(cover.src);
-      image.alt = cover.alt || "";
+      image.src = source;
+      image.alt = cover?.alt || "";
+      image.addEventListener("error", () => { image.parentElement.hidden = true; }, { once: true });
       if (feature.category && feature.image) tile.classList.add("highlight-cover");
+      if (cover?.fit === "contain") tile.classList.add("highlight-contained");
     } else {
       tile.querySelector(".highlight-media").hidden = true;
     }
@@ -139,14 +142,13 @@ function renderHighlights() {
     if (feature.category && item) {
       const caption = tile.querySelector(".highlight-caption");
       caption.textContent = item.title.split(/\s+\|\s+/)[0];
+      caption.lang = view.spanish ? "es" : "en";
       caption.hidden = false;
     }
     grid.append(tile);
   }
-  if (!grid.childElementCount) {
-    document.querySelector("#highlights").hidden = true;
-    document.querySelector('.site-nav [href="#highlights"]').hidden = true;
-  }
+  document.querySelector("#highlights").hidden = !grid.childElementCount;
+  document.querySelector('[data-nav="highlights"]').hidden = !grid.childElementCount;
 }
 
 function renderCard(item) {
@@ -160,14 +162,6 @@ function renderCard(item) {
   time.dateTime = item.date;
   time.textContent = dateLabel(item.date);
   card.querySelector(".resource-type").textContent = view.type(item.type);
-
-  const source = view.spanish && mediaImage(item);
-  if (source) {
-    const image = card.querySelector(".resource-image");
-    image.addEventListener("error", () => { image.hidden = true; }, { once: true });
-    image.src = source;
-    image.hidden = false;
-  }
 
   if (item.model) {
     const model = card.querySelector(".resource-model");
@@ -223,7 +217,6 @@ function initializeFilters() {
   for (const value of years) year.add(new Option(value, value));
   for (const [key, label] of Object.entries(platforms)) platform.add(new Option(label, key));
   for (const button of categoryButtons) button.hidden = !categories.has(button.dataset.category);
-  if (view.spanish) categoryButtons[0].textContent = t("allPosts");
   const params = new URLSearchParams(window.location.search);
   search.value = (params.get("q") || "").slice(0, 250);
   year.value = years.includes(params.get("year")) ? params.get("year") : "";
@@ -405,18 +398,13 @@ if (isLocalFile) {
 document.addEventListener("gonsinlocalechange", () => {
   dateFormat = newDateFormat();
   if (isLocalFile) document.querySelector("#detail-copy-label").textContent = t("copyOriginal");
-  if (view.spanish) categoryButtons[0].textContent = t("allPosts");
-  else {
-    renderArchive();
-    renderHighlights();
-  }
+  if (!view.spanish) renderArchive();
+  renderHighlights();
   renderResults();
 });
 
 initializeFilters();
-if (!view.spanish) {
-  renderArchive();
-  renderHighlights();
-}
+if (!view.spanish) renderArchive();
+renderHighlights();
 renderResults();
 followHash();

@@ -37,7 +37,6 @@
     caseStudies: ["Case Studies", "Casos de éxito"],
     ise: ["GONSIN at ISE 2027", "GONSIN en ISE 2027"],
     newsletter: ["Newsletter", "Boletín"],
-    explorePosts: ["Browse posts", "Publicaciones"],
     find: ["Find a post by topic, product model or platform.",
       "Encuentra publicaciones por tema, modelo de producto o plataforma."],
     search: ["Search titles and product models", "Buscar por título o modelo"],
@@ -51,7 +50,6 @@
     oldest: ["Oldest first", "Más antiguas"],
     category: ["Resource category", "Categoría de material"],
     all: ["All resources", "Todos los recursos"],
-    allPosts: ["All", "Todos"],
     videos: ["Videos", "Videos"],
     projects: ["Project cases", "Casos de éxito"],
     solutions: ["Products & solutions", "Productos y soluciones"],
@@ -181,8 +179,9 @@
     }
     for (const link of document.querySelectorAll("[data-nav]")) {
       const destination = link.dataset.nav;
-      const target = url({ feed: destination === "spanish", hash: ["library", "highlights"].includes(destination) ? destination : "" });
-      link.href = !spanish && (destination === "library" || destination === "highlights") ? "#" + destination : target;
+      link.href = destination === "library" || destination === "highlights"
+        ? "#" + destination
+        : url({ feed: destination === "spanish" });
       if (spanish && destination === "spanish" && !dialog.contains(link)) link.setAttribute("aria-current", "page");
     }
   }
@@ -225,10 +224,8 @@
     if (event.target === dialog) dialog.close();
   });
 
-  document.body.dataset.section = spanish ? "spanish" : "home";
   for (const element of document.querySelectorAll("[data-home-only]")) element.hidden = spanish;
   for (const element of document.querySelectorAll("[data-spanish-only]")) element.hidden = !spanish;
-  if (spanish) document.querySelector("#library-title").dataset.i18n = "explorePosts";
   menu.hidden = false;
   translate();
   if (language === "es" && !spanish && locationUrl.searchParams.get("invite") === "1") showInvitation();

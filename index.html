@@ -21,12 +21,12 @@
   <link rel="canonical" href="https://gonsinconference.github.io/GONSIN-Social-Media-Library/">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preload" href="assets/barlow.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=5cfed781cfe1c001bbf9504f">
-  <script src="catalog.js?v=5cfed781cfe1c001bbf9504f" defer></script>
-  <script src="catalog-es.js?v=5cfed781cfe1c001bbf9504f" defer></script>
-  <script src="i18n.js?v=5cfed781cfe1c001bbf9504f" defer></script>
-  <script src="app.js?v=5cfed781cfe1c001bbf9504f" defer></script>
-  <script src="excel-download.js?v=5cfed781cfe1c001bbf9504f" defer></script>
+  <link rel="stylesheet" href="styles.css?v=09022ccd1bb9c527ca5a4b1f">
+  <script src="catalog.js?v=09022ccd1bb9c527ca5a4b1f" defer></script>
+  <script src="catalog-es.js?v=09022ccd1bb9c527ca5a4b1f" defer></script>
+  <script src="i18n.js?v=09022ccd1bb9c527ca5a4b1f" defer></script>
+  <script src="app.js?v=09022ccd1bb9c527ca5a4b1f" defer></script>
+  <script src="excel-download.js?v=09022ccd1bb9c527ca5a4b1f" defer></script>
   <title>GONSIN Social Media Library</title>
 </head>
 <body>
@@ -76,7 +76,7 @@
           <p class="hero-description" data-i18n="intro">Product demos, conference projects and event highlights from GONSIN’s official channels.</p>
           <div class="hero-actions">
             <a class="button hero-button" href="#library"><span data-i18n="browse">Browse the library</span> <span class="arrow" aria-hidden="true">↓</span></a>
-            <a class="button excel-button" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=5cfed781cfe1c001bbf9504f" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span class="file-type">.xlsx</span></a>
+            <a class="button excel-button" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=09022ccd1bb9c527ca5a4b1f" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span class="file-type">.xlsx</span></a>
           </div>
         </div>
         <a class="photo-credit" href="https://www.gonsin.com/360-virtual-tour.html" target="_blank" rel="noopener noreferrer"><span data-i18n="showroom">GONSIN virtual showroom</span> <span aria-hidden="true">↗</span></a>
@@ -101,7 +101,7 @@
       </div>
     </div>
 
-    <section id="highlights" class="highlights-section wrap" aria-labelledby="highlights-title" data-home-only>
+    <section id="highlights" class="highlights-section wrap" aria-labelledby="highlights-title">
       <div class="section-heading">
         <h2 id="highlights-title" data-i18n="featured">Featured highlights</h2>
         <a class="text-link" href="#library"><span data-i18n="allResourcesLink">View all resources</span> <span aria-hidden="true">↘</span></a>
@@ -113,8 +113,7 @@
       <div class="wrap">
         <div class="section-heading library-heading">
           <h2 id="library-title" data-i18n="browse" tabindex="-1">Browse the library</h2>
-          <p data-i18n="find" data-home-only>Find a post by topic, product model or platform.</p>
-          <a class="button spanish-download" data-excel-download data-spanish-only hidden href="GONSIN-Spanish-Social-Media-Library.xlsx?v=5cfed781cfe1c001bbf9504f" download="GONSIN-Spanish-Social-Media-Library.xlsx"><span aria-hidden="true">↓</span><span data-i18n="download">Download Excel</span></a>
+          <p data-i18n="find">Find a post by topic, product model or platform.</p>
         </div>
         <form class="filters" id="filters" role="search" aria-label="Search and filter the library" data-i18n-label="searchLabel">
           <div class="search-row">
@@ -143,7 +142,8 @@
           <p id="result-count" role="status" aria-live="polite" aria-atomic="true"></p>
           <div class="results-actions">
             <button class="text-link" type="button" id="reset-filters" data-i18n="clear" hidden>Clear filters</button>
-            <a class="text-link" data-excel-download data-home-only href="GONSIN-Social-Media-Library.xlsx?v=5cfed781cfe1c001bbf9504f" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
+            <a class="text-link" data-excel-download data-home-only href="GONSIN-Social-Media-Library.xlsx?v=09022ccd1bb9c527ca5a4b1f" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
+            <a class="text-link spanish-download" data-excel-download data-spanish-only hidden href="GONSIN-Spanish-Social-Media-Library.xlsx?v=09022ccd1bb9c527ca5a4b1f" download="GONSIN-Spanish-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
           </div>
         </div>
         <div class="resources-grid" id="resources-grid"></div>
@@ -279,7 +279,7 @@
         <p class="excel-status" id="excel-status" role="status" aria-live="polite" aria-atomic="true"></p>
         <div class="excel-download-actions">
           <button class="button excel-download-primary" id="download-selection" type="submit" disabled><span data-i18n="downloadSelection">Download selection</span> <span aria-hidden="true">↓</span></button>
-          <a class="text-link" id="download-full-workbook" data-i18n="downloadAll" href="GONSIN-Social-Media-Library.xlsx?v=5cfed781cfe1c001bbf9504f" download="GONSIN-Social-Media-Library.xlsx">Download all</a>
+          <a class="text-link" id="download-full-workbook" data-i18n="downloadAll" href="GONSIN-Social-Media-Library.xlsx?v=09022ccd1bb9c527ca5a4b1f" download="GONSIN-Social-Media-Library.xlsx">Download all</a>
         </div>
       </form>
     </div>
@@ -306,20 +306,17 @@
 
   <template id="resource-template">
     <article class="resource">
-      <img class="resource-image" alt="" width="400" height="190" loading="lazy" decoding="async" hidden>
-      <div class="resource-content">
-        <div class="resource-meta">
-          <span class="resource-type"></span>
-          <time class="resource-date"></time>
-        </div>
-        <h3><a class="resource-title"></a></h3>
-        <p class="resource-model" hidden></p>
-        <div class="resource-footer">
-          <div class="platform-links"></div>
-          <button class="button icon-button resource-share" type="button" title="Copy resource link" data-copy>
-            <span class="icon icon-link" aria-hidden="true"></span>
-          </button>
-        </div>
+      <div class="resource-meta">
+        <span class="resource-type"></span>
+        <time class="resource-date"></time>
+      </div>
+      <h3><a class="resource-title"></a></h3>
+      <p class="resource-model" hidden></p>
+      <div class="resource-footer">
+        <div class="platform-links"></div>
+        <button class="button icon-button resource-share" type="button" title="Copy resource link" data-copy>
+          <span class="icon icon-link" aria-hidden="true"></span>
+        </button>
       </div>
     </article>
   </template>

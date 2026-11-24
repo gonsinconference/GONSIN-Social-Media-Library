@@ -1,4 +1,36 @@
 window.gonsinSpanishCatalog = {
+  "featured": [
+    {
+      "id": "es-media-2026-11-04-gonsin-en-ise-2027",
+      "title": "GONSIN at ISE 2027",
+      "label": "Exhibition preview",
+      "image": {
+        "src": "ise-2027.webp",
+        "alt": "GONSIN at ISE 2027 in Barcelona"
+      }
+    },
+    {
+      "category": "newsletters",
+      "id": "es-media-2026-11-13-interpretacion-simultanea-de-gonsin-multiples-opciones",
+      "title": "Newsletter",
+      "label": "Conference solution",
+      "image": {
+        "src": "es-interpretacion-simultanea.webp",
+        "alt": "Interpretación simultánea de GONSIN",
+        "fit": "contain"
+      }
+    },
+    {
+      "category": "projects",
+      "id": "es-media-2026-11-20-gonsin-facilita-el-dialogo-multilingue-en-el-dialogo",
+      "title": "Case Studies",
+      "label": "Project archive",
+      "image": {
+        "src": "es-kyrgyzstan-climate-dialogue.webp",
+        "alt": ""
+      }
+    }
+  ],
   "items": [
     {
       "id": "es-media-2026-11-20-gonsin-facilita-el-dialogo-multilingue-en-el-dialogo",

@@ -17,7 +17,7 @@ window.gonsinSpanishCatalog = {
       "image": {
         "src": "es-interpretacion-simultanea.webp",
         "alt": "Interpretación simultánea de GONSIN",
-        "fit": "contain"
+        "focus": "upper"
       }
     },
     {

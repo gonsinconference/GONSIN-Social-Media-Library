@@ -128,7 +128,7 @@ function renderHighlights() {
       image.alt = cover?.alt || "";
       image.addEventListener("error", () => { image.parentElement.hidden = true; }, { once: true });
       if (feature.category && feature.image) tile.classList.add("highlight-cover");
-      if (cover?.fit === "contain") tile.classList.add("highlight-contained");
+      if (cover?.focus === "upper") tile.classList.add("highlight-focus-upper");
     } else {
       tile.querySelector(".highlight-media").hidden = true;
     }

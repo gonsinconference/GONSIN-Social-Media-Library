@@ -226,6 +226,11 @@
 
   for (const element of document.querySelectorAll("[data-home-only]")) element.hidden = spanish;
   for (const element of document.querySelectorAll("[data-spanish-only]")) element.hidden = !spanish;
+  if (spanish) {
+    for (const link of document.querySelectorAll(".footer-social [data-spanish-href]")) {
+      link.href = link.dataset.spanishHref;
+    }
+  }
   menu.hidden = false;
   translate();
   if (language === "es" && !spanish && locationUrl.searchParams.get("invite") === "1") showInvitation();

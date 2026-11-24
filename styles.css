@@ -378,6 +378,23 @@ html:is([lang="es"], [lang="fr"]) .search-row { grid-template-columns: minmax(16
   .site-nav > :not(.guide-entry) { display: none; }
   .header-inner { justify-content: space-between; }
 }
+@media (min-width: 961px) {
+  .header-inner {
+    --header-text-size: clamp(12px, 1vw, 14px);
+    --header-spacing: clamp(10px, 1vw, 18px);
+    --header-inset: clamp(7px, .77vw, 13px);
+    width: min(1260px, calc(100% - 32px));
+    gap: var(--header-spacing);
+  }
+  .header-inner .brand { gap: 11px; }
+  .header-inner .brand span { padding-left: 11px; font-size: clamp(12px, 1vw, 13px); white-space: nowrap; }
+  .site-nav { flex: none; gap: var(--header-spacing); }
+  .site-nav a, .header-actions .button { font-size: var(--header-text-size); white-space: nowrap; }
+  .site-nav .guide-entry { padding-inline: var(--header-inset); }
+  .header-actions { flex: none; gap: 9px; }
+  .section-entries { flex-wrap: nowrap; }
+  .header-actions .button { gap: 7px; padding-inline: var(--header-inset); }
+}
 @media (max-width: 960px) {
   .header-inner { flex-wrap: wrap; justify-content: space-between; gap: 9px 12px; min-height: 65px; padding-block: 12px 9px; }
   .header-share { padding-inline: 9px; font-size: 12px; }

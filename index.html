@@ -21,12 +21,13 @@
   <link rel="canonical" href="https://gonsinconference.github.io/GONSIN-Social-Media-Library/">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preload" href="assets/barlow.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=e1634c67785bdfd6dfe7cbbe">
-  <script src="catalog.js?v=e1634c67785bdfd6dfe7cbbe" defer></script>
-  <script src="catalog-es.js?v=e1634c67785bdfd6dfe7cbbe" defer></script>
-  <script src="i18n.js?v=e1634c67785bdfd6dfe7cbbe" defer></script>
-  <script src="app.js?v=e1634c67785bdfd6dfe7cbbe" defer></script>
-  <script src="excel-download.js?v=e1634c67785bdfd6dfe7cbbe" defer></script>
+  <link rel="stylesheet" href="styles.css?v=46bc60296593c90fe3c06e71">
+  <script src="catalog.js?v=46bc60296593c90fe3c06e71" defer></script>
+  <script src="catalog-es.js?v=46bc60296593c90fe3c06e71" defer></script>
+  <script src="catalog-fr.js?v=46bc60296593c90fe3c06e71" defer></script>
+  <script src="i18n.js?v=46bc60296593c90fe3c06e71" defer></script>
+  <script src="app.js?v=46bc60296593c90fe3c06e71" defer></script>
+  <script src="excel-download.js?v=46bc60296593c90fe3c06e71" defer></script>
   <title>GONSIN Social Media Library</title>
 </head>
 <body>
@@ -42,10 +43,15 @@
         <a href="#library" data-nav="library" data-i18n="libraryNav">Browse library</a>
       </nav>
       <div class="header-actions">
-        <a class="button spanish-entry" href="?section=spanish" data-nav="spanish" data-home-only>
-          <span data-i18n="spanishNav">Spanish social media</span><span aria-hidden="true">→</span>
-        </a>
-        <a class="button english-entry" href="./" data-nav="english" data-spanish-only hidden>
+        <div class="section-entries" data-home-only>
+          <a class="button section-entry spanish-entry" href="?section=spanish" data-nav="spanish">
+            <span data-i18n="spanishNav">Spanish social media</span><span aria-hidden="true">→</span>
+          </a>
+          <a class="button section-entry french-entry" href="?section=french" data-nav="french">
+            <span data-i18n="frenchNav">French social media</span><span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <a class="button english-entry" href="./" data-nav="english" data-section-only hidden>
           <span aria-hidden="true">←</span><span data-i18n="englishNav">Back to English library</span>
         </a>
         <button class="button header-share" type="button" data-copy>
@@ -59,6 +65,7 @@
           <div class="language-options">
             <button type="button" data-language="en" lang="en" aria-pressed="true">English <span aria-hidden="true">✓</span></button>
             <button type="button" data-language="es" lang="es" aria-pressed="false">Español <span aria-hidden="true">✓</span></button>
+            <button type="button" data-language="fr" lang="fr" aria-pressed="false">Français <span aria-hidden="true">✓</span></button>
           </div>
         </details>
       </div>
@@ -79,19 +86,30 @@
           <p class="hero-description" data-i18n="intro">Product demos, conference projects and event highlights from GONSIN’s official channels.</p>
           <div class="hero-actions">
             <a class="button hero-button" href="#library"><span data-i18n="browse">Browse the library</span> <span class="arrow" aria-hidden="true">↓</span></a>
-            <a class="button excel-button" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=e1634c67785bdfd6dfe7cbbe" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span class="file-type">.xlsx</span></a>
+            <a class="button excel-button" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=46bc60296593c90fe3c06e71" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span class="file-type">.xlsx</span></a>
           </div>
         </div>
         <a class="photo-credit" href="https://www.gonsin.com/360-virtual-tour.html" target="_blank" rel="noopener noreferrer"><span data-i18n="showroom">GONSIN virtual showroom</span> <span aria-hidden="true">↗</span></a>
       </div>
     </section>
 
-    <section class="spanish-hero" aria-labelledby="spanish-title" data-spanish-only hidden>
-      <div class="wrap spanish-hero-inner">
+    <section class="section-hero" aria-labelledby="spanish-title" data-spanish-only hidden>
+      <div class="wrap section-hero-inner">
         <div>
           <p class="breadcrumb"><a data-nav="home" href="./" data-i18n="home">Library</a><span aria-hidden="true">›</span><span data-i18n="spanishNav">Spanish social media</span></p>
           <h1 id="spanish-title"><span data-i18n="spanishFirst">Social media</span><br><span data-i18n="spanishSecond">in Spanish</span></h1>
-          <p class="spanish-intro" data-i18n="spanishIntro">Explore product videos, case studies and conference solutions published in Spanish.</p>
+          <p class="section-intro" data-i18n="spanishIntro">Explore product videos, case studies and conference solutions published in Spanish.</p>
+        </div>
+        <img src="assets/congress.webp" alt="" width="700" height="393" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section-hero" aria-labelledby="french-title" data-french-only hidden>
+      <div class="wrap section-hero-inner">
+        <div>
+          <p class="breadcrumb"><a data-nav="home" href="./" data-i18n="home">Library</a><span aria-hidden="true">›</span><span data-i18n="frenchNav">French social media</span></p>
+          <h1 id="french-title"><span data-i18n="frenchFirst">Social media</span><br><span data-i18n="frenchSecond">in French</span></h1>
+          <p class="section-intro" data-i18n="frenchIntro">Explore product videos, case studies and conference solutions published in French.</p>
         </div>
         <img src="assets/congress.webp" alt="" width="700" height="393" loading="lazy">
       </div>
@@ -145,8 +163,9 @@
           <p id="result-count" role="status" aria-live="polite" aria-atomic="true"></p>
           <div class="results-actions">
             <button class="text-link" type="button" id="reset-filters" data-i18n="clear" hidden>Clear filters</button>
-            <a class="text-link" data-excel-download data-home-only href="GONSIN-Social-Media-Library.xlsx?v=e1634c67785bdfd6dfe7cbbe" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
-            <a class="text-link spanish-download" data-excel-download data-spanish-only hidden href="GONSIN-Spanish-Social-Media-Library.xlsx?v=e1634c67785bdfd6dfe7cbbe" download="GONSIN-Spanish-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
+            <a class="text-link" data-excel-download data-home-only href="GONSIN-Social-Media-Library.xlsx?v=46bc60296593c90fe3c06e71" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
+            <a class="text-link spanish-download" data-excel-download data-section-download="spanish" data-spanish-only hidden href="GONSIN-Spanish-Social-Media-Library.xlsx?v=46bc60296593c90fe3c06e71" download="GONSIN-Spanish-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
+            <a class="text-link french-download" data-excel-download data-section-download="french" data-french-only hidden href="GONSIN-French-Social-Media-Library.xlsx?v=46bc60296593c90fe3c06e71" download="GONSIN-French-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
           </div>
         </div>
         <div class="resources-grid" id="resources-grid"></div>
@@ -180,11 +199,12 @@
         </address>
         <nav class="footer-social" aria-label="GONSIN social media" data-i18n-label="socialInfo">
           <a href="https://www.linkedin.com/company/gonsin-conference-equipment-co-ltd-/posts/?viewAsMember=true"
-             target="_blank" rel="noopener noreferrer" aria-label="GONSIN on LinkedIn" title="LinkedIn" data-home-only>
+             target="_blank" rel="noopener noreferrer" aria-label="GONSIN on LinkedIn" title="LinkedIn" data-hide-in-spanish>
             <img src="assets/social-linkedin.png" alt="" width="18" height="18">
           </a>
           <a href="https://www.facebook.com/2003Gonsin"
              data-spanish-href="https://www.facebook.com/GONSINConferenceES"
+             data-french-href="https://www.facebook.com/GonsinConferenceFR"
              target="_blank" rel="noopener noreferrer" aria-label="GONSIN on Facebook" title="Facebook">
             <img src="assets/social-facebook.png" alt="" width="18" height="18">
           </a>
@@ -215,13 +235,13 @@
 
   <dialog id="language-dialog" class="dialog language-dialog" lang="es" aria-labelledby="language-title" aria-describedby="language-description">
     <div class="dialog-shell detail-body">
-      <button class="button icon-button dialog-close" type="button" data-close aria-label="Cerrar aviso" autofocus>×</button>
+      <button class="button icon-button dialog-close" type="button" data-close data-i18n-label="closeInvitation" aria-label="Cerrar aviso" autofocus>×</button>
       <span class="invitation-icon" aria-hidden="true"><span class="icon icon-globe"></span></span>
-      <h2 id="language-title">¿Buscas publicaciones<br>en español?</h2>
-      <p id="language-description">Encuentra videos de productos y casos de éxito de los canales oficiales de GONSIN.</p>
+      <h2 id="language-title"><span data-i18n="invitationFirst">¿Buscas publicaciones</span><br><span data-i18n="invitationSecond">en español?</span></h2>
+      <p id="language-description" data-i18n="invitationDescription">Encuentra videos de productos y casos de éxito de los canales oficiales de GONSIN.</p>
       <div class="invitation-actions">
-        <a class="button excel-download-primary" href="?section=spanish&amp;lang=es" data-nav="spanish">Ver publicaciones en español <span aria-hidden="true">→</span></a>
-        <button class="button invitation-stay" type="button" data-close>Seguir en la biblioteca</button>
+        <a id="language-invitation-link" class="button excel-download-primary" href="?section=spanish&amp;lang=es"><span data-i18n="invitationLink">Ver publicaciones en español</span> <span aria-hidden="true">→</span></a>
+        <button class="button invitation-stay" type="button" data-close data-i18n="invitationStay">Seguir en la biblioteca</button>
       </div>
     </div>
   </dialog>
@@ -287,7 +307,7 @@
         <p class="excel-status" id="excel-status" role="status" aria-live="polite" aria-atomic="true"></p>
         <div class="excel-download-actions">
           <button class="button excel-download-primary" id="download-selection" type="submit" disabled><span data-i18n="downloadSelection">Download selection</span> <span aria-hidden="true">↓</span></button>
-          <a class="text-link" id="download-full-workbook" data-i18n="downloadAll" href="GONSIN-Social-Media-Library.xlsx?v=e1634c67785bdfd6dfe7cbbe" download="GONSIN-Social-Media-Library.xlsx">Download all</a>
+          <a class="text-link" id="download-full-workbook" data-i18n="downloadAll" href="GONSIN-Social-Media-Library.xlsx?v=46bc60296593c90fe3c06e71" download="GONSIN-Social-Media-Library.xlsx">Download all</a>
         </div>
       </form>
     </div>

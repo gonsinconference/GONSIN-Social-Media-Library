@@ -15,7 +15,7 @@
     tiktok: ["TikTok", 34],
   };
   const downloadLinkKeys = ["drive", "linkedin", "facebook", "youtube", "canva", "website"];
-  const spanishDownloadLinkKeys = ["drive", "facebook", "youtube", "x", "pinterest", "instagram", "tiktok"];
+  const regionalDownloadLinkKeys = ["drive", "facebook", "youtube", "x", "pinterest", "instagram", "tiktok"];
   const linkKeys = downloadLinkKeys.filter(key => key !== "website");
   const headers = [...detailColumns, ...linkKeys.map(key => linkColumns[key])].map(([name]) => name);
   const requiredHeaders = headers.slice(0, -1);
@@ -415,7 +415,7 @@
 
   globalThis.GonsinWeekly = {
     readFile, readBook, readRecords, readHeader, formatDate, urlFromCell, splitLinks, publicUrl, titleKey,
-    hasInternalAddress, itemId, spanishDownloadLinkKeys,
+    hasInternalAddress, itemId, regionalDownloadLinkKeys, spanishDownloadLinkKeys: regionalDownloadLinkKeys,
     readMarketingNews, normalizeNews, newsEntryKey, makeCatalog, encodeCatalog, downloadRecords, downloadLinkKeys,
     makeWorkbook, spreadsheetRows, headers, filename, mime,
   };

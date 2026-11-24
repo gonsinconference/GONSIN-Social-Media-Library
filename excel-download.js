@@ -21,14 +21,14 @@
   const calendarNext = document.querySelector("#calendar-next");
   const calendarDays = document.querySelector("#calendar-days");
   const calendarButtons = [...document.querySelectorAll("[data-calendar-for]")];
-  if (view.spanish) {
-    const spanishDownload = document.querySelector(".spanish-download");
-    fullWorkbook.href = spanishDownload.href;
-    fullWorkbook.download = spanishDownload.download;
+  const sectionDownload = document.querySelector('[data-section-download="' + view.section + '"]');
+  if (sectionDownload) {
+    fullWorkbook.href = sectionDownload.href;
+    fullWorkbook.download = sectionDownload.download;
   }
   const release = new URL(fullWorkbook.href).searchParams.get("v");
   const filename = fullWorkbook.download;
-  const sheetName = view.spanish ? "Spanish Social Media" : "Social Media";
+  const sheetName = view.sheetName;
   const isoDate = /^\d{4}-\d{2}-\d{2}$/;
   let toolsPromise;
   let records;
@@ -95,7 +95,7 @@
     const labels = [...new Set(records.map(row => row.sourceType))]
       .map(type => [type, view.type(type)]).sort((a, b) => a[1].localeCompare(b[1], view.locale));
     renderCheckboxes(typeList, "type", labels);
-    const orderedLinks = view.spanish ? linkKeys : ["linkedin", "facebook", "youtube", "website", "drive", "canva"];
+    const orderedLinks = sectionDownload ? linkKeys : ["linkedin", "facebook", "youtube", "website", "drive", "canva"];
     renderCheckboxes(linkList, "link-type", orderedLinks.map(key => [key, view.platformNames[key]]));
     const dateFormat = new Intl.DateTimeFormat(view.locale, { dateStyle: "medium", timeZone: "UTC" });
     const first = records.at(-1).date;
@@ -109,9 +109,10 @@
     if (!recordsPromise) {
       recordsPromise = loadWorkbookTools().then(async () => {
         const tools = window.GonsinWeekly;
-        if (view.spanish) {
-          linkKeys = tools.spanishDownloadLinkKeys.filter(key => window.gonsinSpanishCatalog.items.some(item => item.links[key]));
-          records = window.gonsinSpanishCatalog.items.map(item => ({ ...item, sourceType: item.type, model: item.model || "" }));
+        if (sectionDownload) {
+          const items = view.catalog.items;
+          linkKeys = tools.regionalDownloadLinkKeys.filter(key => items.some(item => item.links[key]));
+          records = items.map(item => ({ ...item, sourceType: item.type, model: item.model || "" }));
         } else {
           const response = await fetch(fullWorkbook.href);
           if (!response.ok) throw new Error("Could not load the published Excel file.");

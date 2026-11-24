@@ -4,6 +4,7 @@
   const strings = {
     homeTitle: ["GONSIN Social Media Library", "Biblioteca de redes sociales de GONSIN"],
     spanishTitle: ["Social media in Spanish | GONSIN", "Redes sociales en español | GONSIN"],
+    frenchTitle: ["Social media in French | GONSIN", "Redes sociales en francés | GONSIN"],
     skip: ["Skip to the library", "Saltar a la biblioteca"],
     brand: ["Media Library", "Biblioteca de medios"],
     home: ["Library", "Biblioteca"],
@@ -11,6 +12,7 @@
     highlightsNav: ["Highlights", "Destacados"],
     libraryNav: ["Browse library", "Explorar biblioteca"],
     spanishNav: ["Spanish social media", "Redes en español"],
+    frenchNav: ["French social media", "Redes en francés"],
     englishNav: ["Back to English library", "Volver a la biblioteca en inglés"],
     share: ["Share library", "Compartir"],
     language: ["Language: English", "Idioma: Español"],
@@ -28,6 +30,17 @@
     spanishSecond: ["in Spanish", "en español"],
     spanishIntro: ["Explore product videos, case studies and conference solutions published in Spanish.",
       "Explora videos de productos, casos de éxito y soluciones para conferencias publicados en español."],
+    frenchFirst: ["Social media", "Redes sociales"],
+    frenchSecond: ["in French", "en francés"],
+    frenchIntro: ["Explore product videos, case studies and conference solutions published in French.",
+      "Explora videos de productos, casos de éxito y soluciones para conferencias publicados en francés."],
+    invitationFirst: ["Looking for posts", "¿Buscas publicaciones"],
+    invitationSecond: ["in Spanish?", "en español?"],
+    invitationDescription: ["Find product videos and case studies from GONSIN’s official channels.",
+      "Encuentra videos de productos y casos de éxito de los canales oficiales de GONSIN."],
+    invitationLink: ["View posts in Spanish", "Ver publicaciones en español"],
+    invitationStay: ["Stay in the library", "Seguir en la biblioteca"],
+    closeInvitation: ["Close invitation", "Cerrar aviso"],
     posts: ["social posts", "publicaciones"],
     official: ["official articles", "artículos oficiales"],
     featured: ["Featured highlights", "Destacados"],
@@ -122,51 +135,185 @@
     exportError: ["Could not create the Excel file. Please try again.",
       "No se pudo crear el archivo de Excel. Inténtalo de nuevo."],
   };
-  const resourceTypes = {
+  const french = {
+    homeTitle: "Médiathèque des réseaux sociaux de GONSIN",
+    spanishTitle: "Réseaux sociaux en espagnol | GONSIN",
+    frenchTitle: "Réseaux sociaux en français | GONSIN",
+    skip: "Aller à la médiathèque",
+    brand: "Médiathèque",
+    home: "Médiathèque",
+    nav: "Navigation principale",
+    highlightsNav: "À la une",
+    libraryNav: "Explorer",
+    spanishNav: "Réseaux en espagnol",
+    frenchNav: "Réseaux en français",
+    englishNav: "Retour à la version anglaise",
+    share: "Partager",
+    language: "Langue : français",
+    contact: "Contactez-nous",
+    eyebrow: "Conférence et audiovisuel professionnel",
+    titleFirst: "Médiathèque",
+    titleSecond: "GONSIN",
+    intro: "Démonstrations de produits, projets de conférence et temps forts des événements sur les canaux officiels de GONSIN.",
+    browse: "Explorer la médiathèque",
+    showroom: "Visite virtuelle de GONSIN",
+    boardroomAlt: "Une salle de réunion GONSIN équipée de terminaux de conférence sans papier et d’écrans muraux",
+    spanishFirst: "Réseaux sociaux",
+    spanishSecond: "en espagnol",
+    spanishIntro: "Découvrez les vidéos de produits, les études de cas et les solutions de conférence publiées en espagnol.",
+    frenchFirst: "Réseaux sociaux",
+    frenchSecond: "en français",
+    frenchIntro: "Découvrez les vidéos de produits, les études de cas et les solutions de conférence publiées en français.",
+    invitationFirst: "Vous cherchez des publications",
+    invitationSecond: "en français ?",
+    invitationDescription: "Retrouvez les démonstrations de produits et les études de cas des canaux officiels de GONSIN.",
+    invitationLink: "Voir les publications en français",
+    invitationStay: "Rester dans la médiathèque",
+    closeInvitation: "Fermer l’invitation",
+    posts: "publications",
+    official: "articles officiels",
+    featured: "À la une",
+    allResourcesLink: "Voir toutes les ressources",
+    exhibitionPreview: "Prochain salon",
+    conferenceSolution: "Solution de conférence",
+    projectArchive: "Nos projets",
+    caseStudies: "Études de cas",
+    ise: "GONSIN à l’ISE 2027",
+    newsletter: "Newsletter",
+    find: "Trouvez une publication par sujet, modèle de produit ou plateforme.",
+    search: "Rechercher par titre ou modèle",
+    searchLabel: "Rechercher et filtrer les ressources",
+    year: "Année",
+    allYears: "Toutes les années",
+    platform: "Plateforme",
+    allPlatforms: "Toutes les plateformes",
+    sort: "Ordre de tri",
+    newest: "Les plus récents",
+    oldest: "Les plus anciens",
+    category: "Catégorie de ressource",
+    all: "Toutes les ressources",
+    videos: "Vidéos",
+    projects: "Études de cas",
+    solutions: "Produits et solutions",
+    newsletters: "Newsletters",
+    events: "Salons et événements",
+    articles: "Articles officiels",
+    updates: "Actualités GONSIN",
+    pictures: "Images",
+    clear: "Effacer les filtres",
+    noResults: "Aucune ressource trouvée",
+    tryAgain: "Essayez un autre mot-clé ou effacez les filtres.",
+    more: "Voir plus",
+    website: "Site web",
+    email: "E-mail",
+    contactInfo: "Coordonnées de GONSIN",
+    socialInfo: "Réseaux sociaux de GONSIN",
+    backToTop: "Retour en haut de la page",
+    closeResource: "Fermer la ressource",
+    sources: "Sources d’origine",
+    copy: "Copier le lien",
+    copyOriginal: "Copier le lien d’origine",
+    closeShare: "Fermer la fenêtre de partage",
+    copyPrompt: "Sélectionnez et copiez cette adresse.",
+    copyResource: "Copier le lien de la ressource",
+    copyFor: title => "Copier le lien de " + title,
+    copyOriginalFor: title => "Copier le lien d’origine de " + title,
+    copied: "Lien copié.",
+    originalCopied: "Lien d’origine copié.",
+    resourceCopied: "Lien de la ressource copié.",
+    libraryCopied: "Lien de la médiathèque copié.",
+    openOn: name => "Ouvrir sur " + name + " (nouvel onglet)",
+    resultCount: (shown, total) => (shown < total ? shown + " sur " : "") + total + (total === 1 ? " ressource" : " ressources"),
+    download: "Télécharger Excel",
+    closeDownload: "Fermer le téléchargement Excel",
+    startDate: "Date de début",
+    endDate: "Date de fin",
+    pickStart: "Choisir la date de début",
+    pickEnd: "Choisir la date de fin",
+    rangeHint: "Laissez une date vide pour ouvrir l’intervalle.",
+    available: dates => "Période disponible : " + dates + ".",
+    type: "Type",
+    typeHint: "Sélectionnez un ou plusieurs types. Laissez toutes les cases décochées pour inclure tous les types.",
+    linkTypes: "Types de liens",
+    linkHint: "Choisissez les colonnes de liens à inclure. Laissez toutes les cases décochées pour inclure tous les types de liens.",
+    downloadSelection: "Télécharger la sélection",
+    downloadAll: "Tout télécharger",
+    closeCalendar: "Fermer le calendrier",
+    chooseDate: "Choisir une date",
+    previousMonth: "Mois précédent",
+    nextMonth: "Mois suivant",
+    month: "Mois",
+    dates: "Dates",
+    sun: "Dim", mon: "Lun", tue: "Mar", wed: "Mer", thu: "Jeu", fri: "Ven", sat: "Sam",
+    reversed: "La date de fin doit être égale ou postérieure à la date de début.",
+    invalidDate: "Saisissez une date valide au format AAAA-MM-JJ.",
+    noDownload: "Aucun résultat. Modifiez les dates, les types ou les liens.",
+    ready: n => n + (n === 1 ? " ressource prête à télécharger." : " ressources prêtes à télécharger."),
+    loading: "Chargement des options Excel…",
+    filtersError: "Les filtres sont indisponibles. Rouvrez cette fenêtre ou cliquez sur Tout télécharger.",
+    exportError: "Impossible de créer le fichier Excel. Réessayez.",
+  };
+  const spanishTypes = {
     video: "Video", "case sharing": "Caso de éxito", "case study": "Caso de éxito", "case studies": "Casos de éxito",
     "project case": "Caso de éxito", exhibition: "Feria", product: "Producto", newsletter: "Boletín",
     solution: "Solución", "gonsin-ai": "GONSIN-AI", "festival poster": "Publicación de temporada",
     seasonal: "Publicación de temporada", "about gonsin": "Sobre GONSIN", "brand update": "Novedad de GONSIN",
     article: "Artículo", "official article": "Artículo oficial", image: "Imagen", picture: "Imagen",
   };
+  const frenchTypes = {
+    video: "Vidéo", "case sharing": "Étude de cas", "case study": "Étude de cas", "case studies": "Études de cas",
+    "project case": "Étude de cas", exhibition: "Salon", product: "Produit", newsletter: "Newsletter",
+    solution: "Solution", "gonsin-ai": "GONSIN-AI", "festival poster": "Publication saisonnière",
+    seasonal: "Publication saisonnière", "about gonsin": "À propos de GONSIN", "brand update": "Actualité GONSIN",
+    article: "Article", "official article": "Article officiel", image: "Image", picture: "Image",
+  };
 
+  const sections = {
+    english: { contentLanguage: "en", title: "homeTitle", catalog: window.gonsinCatalog, sheetName: "Social Media" },
+    spanish: { contentLanguage: "es", title: "spanishTitle", catalog: window.gonsinSpanishCatalog, sheetName: "Spanish Social Media" },
+    french: { contentLanguage: "fr", title: "frenchTitle", catalog: window.gonsinFrenchCatalog, sheetName: "French Social Media" },
+  };
+  const translatedSections = { es: "spanish", fr: "french" };
   const locationUrl = new URL(window.location.href);
-  const spanish = locationUrl.searchParams.get("section") === "spanish";
-  let language = locationUrl.searchParams.get("lang") === "es" ? "es" : "en";
+  const requestedSection = locationUrl.searchParams.get("section");
+  const section = Object.hasOwn(sections, requestedSection) ? requestedSection : "english";
+  const requestedLanguage = locationUrl.searchParams.get("lang");
+  let language = Object.hasOwn(translatedSections, requestedLanguage) ? requestedLanguage : "en";
   const menu = document.querySelector("#language-menu");
   const summary = menu.querySelector("summary");
   const dialog = document.querySelector("#language-dialog");
+  const invitationLink = document.querySelector("#language-invitation-link");
   const languageButtons = [...menu.querySelectorAll("[data-language]")];
   const translated = Array.from(document.querySelectorAll("[data-i18n], [data-i18n-label], [data-i18n-placeholder], [data-i18n-alt]"));
 
   function t(key, ...args) {
-    const value = strings[key][language === "es" ? 1 : 0];
+    const value = language === "fr" ? french[key] : strings[key][language === "es" ? 1 : 0];
     return typeof value === "function" ? value(...args) : value;
   }
 
-  function url({ feed = spanish, lang = language, hash = "", params = {} } = {}) {
+  function url({ section: destination = section, lang = language, hash = "", params = {} } = {}) {
     const target = new URL(window.location.href);
     target.search = "";
     target.hash = hash;
-    if (feed) target.searchParams.set("section", "spanish");
-    if (lang === "es") target.searchParams.set("lang", "es");
+    if (destination !== "english") target.searchParams.set("section", destination);
+    if (lang !== "en") target.searchParams.set("lang", lang);
     for (const [key, value] of Object.entries(params)) target.searchParams.set(key, value);
     return target.href;
   }
 
   window.gonsinView = {
-    spanish, t, url,
+    section, ...sections[section], t, url,
     platformNames: {
       linkedin: "LinkedIn", facebook: "Facebook", youtube: "YouTube", drive: "Google Drive",
       canva: "Canva", website: "GONSIN.com", x: "X", pinterest: "Pinterest", instagram: "Instagram", tiktok: "TikTok",
     },
-    get locale() { return language === "es" ? "es" : "en-US"; },
-    type: value => language === "es" ? resourceTypes[value.toLowerCase()] || value : value,
+    get locale() { return language === "en" ? "en-US" : language; },
+    type: value => ({ es: spanishTypes, fr: frenchTypes })[language]?.[value.toLowerCase()] || value,
   };
 
   function translate() {
     document.documentElement.lang = window.gonsinView.locale;
-    document.title = t(spanish ? "spanishTitle" : "homeTitle");
+    document.title = t(sections[section].title);
     for (const element of translated) {
       const { i18n, i18nLabel, i18nPlaceholder, i18nAlt } = element.dataset;
       if (i18n) element.textContent = t(i18n);
@@ -182,8 +329,14 @@
       const destination = link.dataset.nav;
       link.href = destination === "library" || destination === "highlights"
         ? "#" + destination
-        : url({ feed: destination === "spanish", lang: destination === "english" ? "en" : language });
+        : url({ section: destination === "home" ? "english" : destination, lang: destination === "english" ? "en" : language });
     }
+    dialog.lang = window.gonsinView.locale;
+    if (translatedSections[language]) invitationLink.href = url({ section: translatedSections[language] });
+  }
+
+  function shouldInvite() {
+    return Object.hasOwn(translatedSections, language) && translatedSections[language] !== section;
   }
 
   function showInvitation() {
@@ -196,18 +349,18 @@
     if (next === language) return;
     language = next;
     const target = new URL(window.location.href);
-    if (language === "es") target.searchParams.set("lang", "es");
+    if (language !== "en") target.searchParams.set("lang", language);
     else target.searchParams.delete("lang");
     try {
       history.replaceState(history.state, "", target);
     } catch {
-      if (language === "es" && !spanish) target.searchParams.set("invite", "1");
+      if (shouldInvite()) target.searchParams.set("invite", "1");
       window.location.assign(target);
       return;
     }
     translate();
     document.dispatchEvent(new Event("gonsinlocalechange"));
-    if (language === "es" && !spanish) showInvitation();
+    if (shouldInvite()) showInvitation();
   }
 
   for (const button of languageButtons) button.addEventListener("click", () => selectLanguage(button.dataset.language));
@@ -224,14 +377,21 @@
     if (event.target === dialog) dialog.close();
   });
 
-  for (const element of document.querySelectorAll("[data-home-only]")) element.hidden = spanish;
-  for (const element of document.querySelectorAll("[data-spanish-only]")) element.hidden = !spanish;
-  if (spanish) {
-    for (const link of document.querySelectorAll(".footer-social [data-spanish-href]")) {
-      link.href = link.dataset.spanishHref;
+  for (const element of document.querySelectorAll("[data-home-only]")) element.hidden = section !== "english";
+  for (const element of document.querySelectorAll("[data-section-only]")) element.hidden = section === "english";
+  for (const languageSection of Object.values(translatedSections)) {
+    for (const element of document.querySelectorAll("[data-" + languageSection + "-only]")) {
+      element.hidden = section !== languageSection;
     }
   }
+  if (section !== "english") {
+    const attribute = "data-" + section + "-href";
+    for (const link of document.querySelectorAll(".footer-social [" + attribute + "]")) {
+      link.href = link.getAttribute(attribute);
+    }
+  }
+  for (const link of document.querySelectorAll("[data-hide-in-spanish]")) link.hidden = section === "spanish";
   menu.hidden = false;
   translate();
-  if (language === "es" && !spanish && locationUrl.searchParams.get("invite") === "1") showInvitation();
+  if (shouldInvite() && locationUrl.searchParams.get("invite") === "1") showInvitation();
 })();

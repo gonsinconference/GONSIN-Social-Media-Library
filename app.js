@@ -1,15 +1,15 @@
 "use strict";
 
 const view = window.gonsinView;
-const { t } = view;
-const catalog = view.spanish ? window.gonsinSpanishCatalog : window.gonsinCatalog;
+const { t, catalog } = view;
+const isMainLibrary = view.section === "english";
 const isLocalFile = window.location.protocol === "file:";
 const appRelease = new URL(document.currentScript?.src || document.baseURI).searchParams.get("v");
 const assetPath = name => window.gonsinAssets?.[name] || "assets/" + name + (appRelease ? "?v=" + appRelease : "");
 const itemsById = new Map(catalog.items.map(item => [item.id, item]));
 const categories = new Set(["all", ...catalog.items.map(item => item.category)]);
 const platforms = Object.fromEntries(Object.entries(view.platformNames).filter(([key]) =>
-  !view.spanish ? !["x", "pinterest", "instagram", "tiktok"].includes(key) : catalog.items.some(item => item.links[key])));
+  isMainLibrary ? !["x", "pinterest", "instagram", "tiktok"].includes(key) : catalog.items.some(item => item.links[key])));
 const newDateFormat = () => new Intl.DateTimeFormat(view.locale, {
   year: "numeric", month: "short", day: "numeric", timeZone: "UTC",
 });
@@ -141,8 +141,9 @@ function renderHighlights() {
     label.hidden = !label.textContent;
     if (feature.category && item) {
       const caption = tile.querySelector(".highlight-caption");
-      caption.textContent = item.title.split(/\s+\|\s+/)[0];
-      caption.lang = view.spanish ? "es" : "en";
+      const [topic, subtitle] = item.title.split(/\s+\|\s+/, 2);
+      caption.textContent = topic === "GONSIN" && subtitle ? subtitle : topic;
+      caption.lang = view.contentLanguage;
       caption.hidden = false;
     }
     grid.append(tile);
@@ -155,7 +156,7 @@ function renderCard(item) {
   const card = resourceTemplate.content.firstElementChild.cloneNode(true);
   const title = card.querySelector(".resource-title");
   title.textContent = item.title;
-  title.lang = view.spanish ? "es" : "en";
+  title.lang = view.contentLanguage;
   title.href = "#" + item.id;
   title.dataset.resource = item.id;
   const time = card.querySelector("time");
@@ -261,7 +262,7 @@ function showResource(item, trigger = null) {
 
   document.querySelector("#detail-meta").textContent = view.type(item.type) + " · " + dateLabel(item.date);
   document.querySelector("#detail-title").textContent = item.title;
-  document.querySelector("#detail-title").lang = view.spanish ? "es" : "en";
+  document.querySelector("#detail-title").lang = view.contentLanguage;
   const model = document.querySelector("#detail-model");
   model.textContent = item.model || "";
   model.hidden = !item.model;
@@ -398,13 +399,13 @@ if (isLocalFile) {
 document.addEventListener("gonsinlocalechange", () => {
   dateFormat = newDateFormat();
   if (isLocalFile) document.querySelector("#detail-copy-label").textContent = t("copyOriginal");
-  if (!view.spanish) renderArchive();
+  if (isMainLibrary) renderArchive();
   renderHighlights();
   renderResults();
 });
 
 initializeFilters();
-if (!view.spanish) renderArchive();
+if (isMainLibrary) renderArchive();
 renderHighlights();
 renderResults();
 followHash();

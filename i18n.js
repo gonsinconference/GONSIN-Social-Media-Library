@@ -11,6 +11,7 @@
     highlightsNav: ["Highlights", "Destacados"],
     libraryNav: ["Browse library", "Explorar biblioteca"],
     spanishNav: ["Spanish social media", "Redes en español"],
+    englishNav: ["Back to English library", "Volver a la biblioteca en inglés"],
     share: ["Share library", "Compartir"],
     language: ["Language: English", "Idioma: Español"],
     contact: ["Contact us", "Contáctanos"],
@@ -143,12 +144,12 @@
     return typeof value === "function" ? value(...args) : value;
   }
 
-  function url({ feed = spanish, hash = "", params = {} } = {}) {
+  function url({ feed = spanish, lang = language, hash = "", params = {} } = {}) {
     const target = new URL(window.location.href);
     target.search = "";
     target.hash = hash;
     if (feed) target.searchParams.set("section", "spanish");
-    if (language === "es") target.searchParams.set("lang", "es");
+    if (lang === "es") target.searchParams.set("lang", "es");
     for (const [key, value] of Object.entries(params)) target.searchParams.set(key, value);
     return target.href;
   }
@@ -181,8 +182,7 @@
       const destination = link.dataset.nav;
       link.href = destination === "library" || destination === "highlights"
         ? "#" + destination
-        : url({ feed: destination === "spanish" });
-      if (spanish && destination === "spanish" && !dialog.contains(link)) link.setAttribute("aria-current", "page");
+        : url({ feed: destination === "spanish", lang: destination === "english" ? "en" : language });
     }
   }
 

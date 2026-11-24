@@ -313,7 +313,8 @@ function notifyCopy(id) {
     detailFeedback.textContent = t("copied");
     return;
   }
-  toast.textContent = t(isLocalFile ? "originalCopied" : id ? "resourceCopied" : "libraryCopied");
+  const pageCopyMessage = view.isGuide ? "guideCopied" : "libraryCopied";
+  toast.textContent = t(isLocalFile ? "originalCopied" : id ? "resourceCopied" : pageCopyMessage);
   window.clearTimeout(toastTimer);
   toastTimer = window.setTimeout(() => { toast.textContent = ""; }, 3000);
 }
@@ -381,7 +382,7 @@ for (const dialog of [resourceDialog, shareDialog]) {
 }
 resourceDialog.addEventListener("close", closeResource);
 detailImage.addEventListener("error", () => { detailImage.hidden = true; });
-window.addEventListener("hashchange", followHash);
+if (!view.isGuide) window.addEventListener("hashchange", followHash);
 
 if ("IntersectionObserver" in window) {
   const contactShortcut = document.querySelector(".contact-shortcut");
@@ -397,6 +398,7 @@ if (isLocalFile) {
 }
 
 document.addEventListener("gonsinlocalechange", () => {
+  if (view.isGuide) return;
   dateFormat = newDateFormat();
   if (isLocalFile) document.querySelector("#detail-copy-label").textContent = t("copyOriginal");
   if (isMainLibrary) renderArchive();
@@ -404,8 +406,10 @@ document.addEventListener("gonsinlocalechange", () => {
   renderResults();
 });
 
-initializeFilters();
-if (isMainLibrary) renderArchive();
-renderHighlights();
-renderResults();
-followHash();
+if (!view.isGuide) {
+  initializeFilters();
+  if (isMainLibrary) renderArchive();
+  renderHighlights();
+  renderResults();
+  followHash();
+}

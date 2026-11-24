@@ -21,13 +21,13 @@
   <link rel="canonical" href="https://gonsinconference.github.io/GONSIN-Social-Media-Library/">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preload" href="assets/barlow.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=cd28f72a6086f72b28d3dd4f">
-  <script src="catalog.js?v=cd28f72a6086f72b28d3dd4f" defer></script>
-  <script src="catalog-es.js?v=cd28f72a6086f72b28d3dd4f" defer></script>
-  <script src="catalog-fr.js?v=cd28f72a6086f72b28d3dd4f" defer></script>
-  <script src="i18n.js?v=cd28f72a6086f72b28d3dd4f" defer></script>
-  <script src="app.js?v=cd28f72a6086f72b28d3dd4f" defer></script>
-  <script src="excel-download.js?v=cd28f72a6086f72b28d3dd4f" defer></script>
+  <link rel="stylesheet" href="styles.css?v=2688f41506e5e4c0e1e4a9fd">
+  <script src="catalog.js?v=2688f41506e5e4c0e1e4a9fd" defer></script>
+  <script src="catalog-es.js?v=2688f41506e5e4c0e1e4a9fd" defer></script>
+  <script src="catalog-fr.js?v=2688f41506e5e4c0e1e4a9fd" defer></script>
+  <script src="i18n.js?v=2688f41506e5e4c0e1e4a9fd" defer></script>
+  <script src="app.js?v=2688f41506e5e4c0e1e4a9fd" defer></script>
+  <script src="excel-download.js?v=2688f41506e5e4c0e1e4a9fd" defer></script>
   <title>GONSIN Social Media Library</title>
 </head>
 <body>
@@ -41,6 +41,7 @@
       <nav class="site-nav" aria-label="Main navigation" data-i18n-label="nav">
         <a href="#highlights" data-nav="highlights" data-i18n="highlightsNav">Highlights</a>
         <a href="#library" data-nav="library" data-i18n="libraryNav">Browse library</a>
+        <a class="guide-entry" href="?page=guide" data-nav="guide" data-i18n="guideNav">User guide</a>
       </nav>
       <div class="header-actions">
         <div class="section-entries" data-home-only>
@@ -74,7 +75,7 @@
 
   <a class="contact-shortcut" href="#contact"><span data-i18n="contact">Contact us</span> <span aria-hidden="true">↓</span></a>
 
-  <main>
+  <main id="library-page">
     <section class="hero" aria-labelledby="hero-title" data-home-only>
       <div class="hero-visual">
         <img src="assets/boardroom.webp" width="958" height="424" alt="A GONSIN boardroom with paperless conference terminals and wall-mounted displays" data-i18n-alt="boardroomAlt" fetchpriority="high">
@@ -86,7 +87,7 @@
           <p class="hero-description" data-i18n="intro">Product demos, conference projects and event highlights from GONSIN’s official channels.</p>
           <div class="hero-actions">
             <a class="button hero-button" href="#library"><span data-i18n="browse">Browse the library</span> <span class="arrow" aria-hidden="true">↓</span></a>
-            <a class="button excel-button" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=cd28f72a6086f72b28d3dd4f" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span class="file-type">.xlsx</span></a>
+            <a class="button excel-button" data-excel-download href="GONSIN-Social-Media-Library.xlsx?v=2688f41506e5e4c0e1e4a9fd" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span class="file-type">.xlsx</span></a>
           </div>
         </div>
         <a class="photo-credit" href="https://www.gonsin.com/360-virtual-tour.html" target="_blank" rel="noopener noreferrer"><span data-i18n="showroom">GONSIN virtual showroom</span> <span aria-hidden="true">↗</span></a>
@@ -163,9 +164,9 @@
           <p id="result-count" role="status" aria-live="polite" aria-atomic="true"></p>
           <div class="results-actions">
             <button class="text-link" type="button" id="reset-filters" data-i18n="clear" hidden>Clear filters</button>
-            <a class="text-link" data-excel-download data-home-only href="GONSIN-Social-Media-Library.xlsx?v=cd28f72a6086f72b28d3dd4f" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
-            <a class="text-link spanish-download" data-excel-download data-section-download="spanish" data-spanish-only hidden href="GONSIN-Spanish-Social-Media-Library.xlsx?v=cd28f72a6086f72b28d3dd4f" download="GONSIN-Spanish-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
-            <a class="text-link french-download" data-excel-download data-section-download="french" data-french-only hidden href="GONSIN-French-Social-Media-Library.xlsx?v=cd28f72a6086f72b28d3dd4f" download="GONSIN-French-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
+            <a class="text-link" data-excel-download data-home-only href="GONSIN-Social-Media-Library.xlsx?v=2688f41506e5e4c0e1e4a9fd" download="GONSIN-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
+            <a class="text-link spanish-download" data-excel-download data-section-download="spanish" data-spanish-only hidden href="GONSIN-Spanish-Social-Media-Library.xlsx?v=2688f41506e5e4c0e1e4a9fd" download="GONSIN-Spanish-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
+            <a class="text-link french-download" data-excel-download data-section-download="french" data-french-only hidden href="GONSIN-French-Social-Media-Library.xlsx?v=2688f41506e5e4c0e1e4a9fd" download="GONSIN-French-Social-Media-Library.xlsx"><span data-i18n="download">Download Excel</span> <span aria-hidden="true">↓</span></a>
           </div>
         </div>
         <div class="resources-grid" id="resources-grid"></div>
@@ -181,6 +182,101 @@
         </noscript>
       </div>
     </section>
+  </main>
+
+  <main id="guide" class="guide-page" tabindex="-1" hidden>
+    <section class="guide-hero" aria-labelledby="guide-title">
+      <div class="wrap guide-hero-inner">
+        <div>
+          <h1 id="guide-title" data-i18n="guideHeading">How to use the library</h1>
+          <p data-i18n="guideIntro">Find official GONSIN resources, share links and download a customized Excel list.</p>
+          <a class="button guide-library-link" href="#library" data-nav="guide-back">
+            <span aria-hidden="true">←</span><span data-i18n="guideBack">Back to the library</span>
+          </a>
+        </div>
+        <img src="assets/boardroom.webp" alt="" width="958" height="424">
+      </div>
+    </section>
+
+    <div class="wrap guide-content">
+      <nav class="guide-nav" aria-label="Guide steps" data-i18n-label="guideSteps">
+        <ol>
+          <li><a href="#guide-language" data-i18n="guideStepLanguage">Choose a language</a></li>
+          <li><a href="#guide-search" data-i18n="guideStepSearch">Find resources</a></li>
+          <li><a href="#guide-share" data-i18n="guideStepShare">Open and share</a></li>
+          <li><a href="#guide-excel" data-i18n="download">Download Excel</a></li>
+        </ol>
+      </nav>
+
+      <section class="guide-step" id="guide-language" aria-labelledby="guide-language-title">
+        <div class="guide-step-copy">
+          <div class="guide-step-heading">
+            <span class="guide-step-number" aria-hidden="true">1</span>
+            <h2 id="guide-language-title" data-i18n="guideStepLanguage">Choose a language</h2>
+          </div>
+          <ul>
+            <li data-i18n="guideLanguageDirect">Open Spanish social media or French social media from the library header to browse posts in that language.</li>
+            <li data-i18n="guideLanguageMenu">The language menu changes the interface and this guide. When a library page offers to open a language section, you can go there or keep browsing.</li>
+            <li data-i18n="guideLanguageBack">In a language section, use the left-arrow button at the top to return to the English library.</li>
+          </ul>
+        </div>
+        <figure class="guide-figure">
+          <img data-guide-image="language" data-i18n-alt="guideLanguageAlt" alt="Spanish and French section links and the open language menu" width="1000" height="321" loading="lazy">
+        </figure>
+      </section>
+
+      <section class="guide-step" id="guide-search" aria-labelledby="guide-search-title">
+        <div class="guide-step-copy">
+          <div class="guide-step-heading">
+            <span class="guide-step-number" aria-hidden="true">2</span>
+            <h2 id="guide-search-title" data-i18n="guideStepSearch">Find resources</h2>
+          </div>
+          <ul>
+            <li data-i18n="guideSearchQuery">In Browse the library, enter a title keyword or product model.</li>
+            <li data-i18n="guideSearchFilters">Combine year, platform and category filters. Select Clear filters to start over.</li>
+            <li data-i18n="guideSearchHighlights">Open the Newsletter or Case Studies highlight to jump to its category.</li>
+          </ul>
+        </div>
+        <figure class="guide-figure">
+          <img data-guide-image="search" data-i18n-alt="guideSearchAlt" alt="Search field and the year, platform and category filters" width="1000" height="453" loading="lazy">
+        </figure>
+      </section>
+
+      <section class="guide-step" id="guide-share" aria-labelledby="guide-share-title">
+        <div class="guide-step-copy">
+          <div class="guide-step-heading">
+            <span class="guide-step-number" aria-hidden="true">3</span>
+            <h2 id="guide-share-title" data-i18n="guideStepShare">Open and share</h2>
+          </div>
+          <ul>
+            <li data-i18n="guideShareOriginal">Choose a platform button on a resource card to open the original post or file. Select the title to view the resource details.</li>
+            <li data-i18n="guideShareResource">Use the link icon on the card to copy that resource’s link.</li>
+            <li data-i18n="guideShareLibrary">Use Share library in the header to copy the address of the library you’re viewing.</li>
+          </ul>
+        </div>
+        <figure class="guide-figure">
+          <img data-guide-image="share" data-i18n-alt="guideShareAlt" alt="A resource card with platform links and a copy-link icon" width="1000" height="277" loading="lazy">
+        </figure>
+      </section>
+
+      <section class="guide-step" id="guide-excel" aria-labelledby="guide-excel-title">
+        <div class="guide-step-copy">
+          <div class="guide-step-heading">
+            <span class="guide-step-number" aria-hidden="true">4</span>
+            <h2 id="guide-excel-title" data-i18n="download">Download Excel</h2>
+          </div>
+          <ul>
+            <li data-i18n="guideExcelOpen">Select Download Excel in the library to open the download options.</li>
+            <li data-i18n="guideExcelFilter">Set a start date, an end date or both. Select Type and Link types to refine the export. Leave a group unchecked to include all its options.</li>
+            <li data-i18n="guideExcelDownload">Select Download selection for filtered records. Download all exports the entire library you’re viewing.</li>
+            <li data-i18n="guideExcelLinks">Open the original posts and files using the clickable links in the downloaded workbook.</li>
+          </ul>
+        </div>
+        <figure class="guide-figure guide-excel-figure">
+          <img data-guide-image="excel" data-i18n-alt="guideExcelAlt" alt="Excel download options with dates, resource types, link types and download buttons" width="1000" height="1421" loading="lazy">
+        </figure>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer" id="contact" tabindex="-1">
@@ -310,7 +406,7 @@
         <p class="excel-status" id="excel-status" role="status" aria-live="polite" aria-atomic="true"></p>
         <div class="excel-download-actions">
           <button class="button excel-download-primary" id="download-selection" type="submit" disabled><span data-i18n="downloadSelection">Download selection</span> <span aria-hidden="true">↓</span></button>
-          <a class="text-link" id="download-full-workbook" data-i18n="downloadAll" href="GONSIN-Social-Media-Library.xlsx?v=cd28f72a6086f72b28d3dd4f" download="GONSIN-Social-Media-Library.xlsx">Download all</a>
+          <a class="text-link" id="download-full-workbook" data-i18n="downloadAll" href="GONSIN-Social-Media-Library.xlsx?v=2688f41506e5e4c0e1e4a9fd" download="GONSIN-Social-Media-Library.xlsx">Download all</a>
         </div>
       </form>
     </div>

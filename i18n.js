@@ -5,12 +5,59 @@
     homeTitle: ["GONSIN Social Media Library", "Biblioteca de redes sociales de GONSIN"],
     spanishTitle: ["Social media in Spanish | GONSIN", "Redes sociales en español | GONSIN"],
     frenchTitle: ["Social media in French | GONSIN", "Redes sociales en francés | GONSIN"],
+    guideTitle: ["User Guide | GONSIN Social Media Library", "Guía de uso | Biblioteca de redes sociales de GONSIN"],
     skip: ["Skip to the library", "Saltar a la biblioteca"],
     brand: ["Media Library", "Biblioteca de medios"],
     home: ["Library", "Biblioteca"],
     nav: ["Main navigation", "Navegación principal"],
     highlightsNav: ["Highlights", "Destacados"],
     libraryNav: ["Browse library", "Explorar biblioteca"],
+    guideNav: ["User guide", "Guía de uso"],
+    guideHeading: ["How to use the library", "Cómo usar la biblioteca"],
+    guideIntro: ["Find official GONSIN resources, share links and download a customized Excel list.",
+      "Encuentra recursos oficiales de GONSIN, comparte enlaces y descarga una lista de Excel a tu medida."],
+    guideBack: ["Back to the library", "Volver a la biblioteca"],
+    guideSkip: ["Skip to the user guide", "Saltar a la guía de uso"],
+    guideShare: ["Share guide", "Compartir guía"],
+    guideCopied: ["Guide link copied.", "Enlace de la guía copiado."],
+    guideSteps: ["Guide steps", "Pasos de la guía"],
+    guideStepLanguage: ["Choose a language", "Elegir el idioma"],
+    guideStepSearch: ["Find resources", "Buscar recursos"],
+    guideStepShare: ["Open and share", "Abrir y compartir"],
+    guideLanguageDirect: ["Open Spanish social media or French social media from the library header to browse posts in that language.",
+      "En el encabezado de la biblioteca, selecciona Redes en español o Redes en francés para ver publicaciones en ese idioma."],
+    guideLanguageMenu: ["The language menu changes the interface and this guide. When a library page offers to open a language section, you can go there or keep browsing.",
+      "El menú de idioma cambia la interfaz y esta guía. Cuando aparezca una invitación en la biblioteca, podrás entrar a la sección correspondiente o seguir explorando."],
+    guideLanguageBack: ["In a language section, use the left-arrow button at the top to return to the English library.",
+      "En una sección por idioma, usa el botón con la flecha hacia la izquierda para volver a la biblioteca en inglés."],
+    guideLanguageAlt: ["Spanish and French section links and the open language menu",
+      "Enlaces a las secciones en español y francés con el menú de idioma abierto"],
+    guideSearchQuery: ["In Browse the library, enter a title keyword or product model.",
+      "En Explorar la biblioteca, escribe una palabra del título o el modelo del producto."],
+    guideSearchFilters: ["Combine year, platform and category filters. Select Clear filters to start over.",
+      "Combina los filtros de año, plataforma y categoría. Selecciona Borrar filtros para empezar de nuevo."],
+    guideSearchHighlights: ["Open the Newsletter or Case Studies highlight to jump to its category.",
+      "Abre el destacado de Boletín o Casos de éxito para ir a la categoría correspondiente."],
+    guideSearchAlt: ["Search field and the year, platform and category filters",
+      "Campo de búsqueda y filtros de año, plataforma y categoría"],
+    guideShareOriginal: ["Choose a platform button on a resource card to open the original post or file. Select the title to view the resource details.",
+      "Usa los botones de la tarjeta para abrir la publicación original o el archivo. Selecciona el título para ver los detalles."],
+    guideShareResource: ["Use the link icon on the card to copy that resource’s link.",
+      "Usa el icono de enlace de la tarjeta para copiar el enlace del recurso."],
+    guideShareLibrary: ["Use Share library in the header to copy the address of the library you’re viewing.",
+      "Pulsa Compartir en el encabezado de la biblioteca para copiar la dirección de la sección que estás viendo."],
+    guideShareAlt: ["A resource card with platform links and a copy-link icon",
+      "Tarjeta de un recurso con enlaces a las plataformas y el icono para copiar el enlace"],
+    guideExcelOpen: ["Select Download Excel in the library to open the download options.",
+      "Selecciona Descargar Excel en la biblioteca para abrir las opciones de descarga."],
+    guideExcelFilter: ["Set a start date, an end date or both. Select Type and Link types to refine the export. Leave a group unchecked to include all its options.",
+      "Indica la fecha inicial, la fecha final o ambas. Elige las opciones de Tipo y Tipos de enlace. Si dejas un grupo sin marcar, se incluirán todas sus opciones."],
+    guideExcelDownload: ["Select Download selection for filtered records. Download all exports the entire library you’re viewing.",
+      "Pulsa Descargar selección para exportar los resultados filtrados. Descargar todo exporta la biblioteca que estás viendo."],
+    guideExcelLinks: ["Open the original posts and files using the clickable links in the downloaded workbook.",
+      "Abre las publicaciones originales y los archivos desde los enlaces del Excel descargado."],
+    guideExcelAlt: ["Excel download options with dates, resource types, link types and download buttons",
+      "Opciones de descarga de Excel con fechas, tipos de recursos, tipos de enlaces y botones de descarga"],
     spanishNav: ["Spanish social media", "Redes en español"],
     frenchNav: ["French social media", "Redes en francés"],
     englishNav: ["Back to English library", "Volver a la biblioteca en inglés"],
@@ -139,12 +186,41 @@
     homeTitle: "Médiathèque des réseaux sociaux de GONSIN",
     spanishTitle: "Réseaux sociaux en espagnol | GONSIN",
     frenchTitle: "Réseaux sociaux en français | GONSIN",
+    guideTitle: "Guide d’utilisation | Médiathèque GONSIN",
     skip: "Aller à la médiathèque",
     brand: "Médiathèque",
     home: "Médiathèque",
     nav: "Navigation principale",
     highlightsNav: "À la une",
     libraryNav: "Explorer",
+    guideNav: "Guide d’utilisation",
+    guideHeading: "Utiliser la médiathèque",
+    guideIntro: "Trouvez les ressources officielles de GONSIN, partagez des liens et téléchargez une liste Excel personnalisée.",
+    guideBack: "Retour à la médiathèque",
+    guideSkip: "Aller au guide d’utilisation",
+    guideShare: "Partager le guide",
+    guideCopied: "Lien du guide copié.",
+    guideSteps: "Étapes du guide",
+    guideStepLanguage: "Choisir une langue",
+    guideStepSearch: "Trouver des ressources",
+    guideStepShare: "Ouvrir et partager",
+    guideLanguageDirect: "Dans l’en-tête de la médiathèque, sélectionnez Réseaux en espagnol ou Réseaux en français pour consulter les publications dans cette langue.",
+    guideLanguageMenu: "Le menu des langues traduit l’interface et ce guide. Si la médiathèque vous propose d’ouvrir la rubrique correspondante, vous pouvez la rejoindre ou poursuivre votre navigation.",
+    guideLanguageBack: "Dans une rubrique par langue, utilisez le bouton avec la flèche vers la gauche pour revenir à la médiathèque en anglais.",
+    guideLanguageAlt: "Accès aux rubriques en espagnol et en français et menu des langues ouvert",
+    guideSearchQuery: "Dans Explorer la médiathèque, saisissez un mot du titre ou le modèle du produit.",
+    guideSearchFilters: "Combinez les filtres d’année, de plateforme et de catégorie. Cliquez sur Effacer les filtres pour recommencer.",
+    guideSearchHighlights: "Ouvrez la mise en avant Newsletter ou Études de cas pour accéder à la catégorie correspondante.",
+    guideSearchAlt: "Champ de recherche et filtres d’année, de plateforme et de catégorie",
+    guideShareOriginal: "Utilisez les boutons de la fiche pour ouvrir la publication originale ou le fichier. Cliquez sur le titre pour afficher les détails.",
+    guideShareResource: "Cliquez sur l’icône de lien de la fiche pour copier le lien de la ressource.",
+    guideShareLibrary: "Cliquez sur Partager dans l’en-tête de la médiathèque pour copier l’adresse de la rubrique affichée.",
+    guideShareAlt: "Fiche de ressource avec liens vers les plateformes et icône de copie du lien",
+    guideExcelOpen: "Cliquez sur Télécharger Excel dans la médiathèque pour ouvrir les options de téléchargement.",
+    guideExcelFilter: "Indiquez la date de début, la date de fin ou les deux. Sélectionnez les options Type et Types de liens. Pour inclure toutes les options d’un groupe, laissez ses cases décochées.",
+    guideExcelDownload: "Cliquez sur Télécharger la sélection pour exporter les résultats filtrés. Tout télécharger exporte l’ensemble de la médiathèque affichée.",
+    guideExcelLinks: "Ouvrez les publications originales et les fichiers à partir des liens cliquables du classeur Excel.",
+    guideExcelAlt: "Options Excel avec dates, types de ressources, types de liens et boutons de téléchargement",
     spanishNav: "Réseaux en espagnol",
     frenchNav: "Réseaux en français",
     englishNav: "Retour à la version anglaise",
@@ -277,6 +353,7 @@
   const locationUrl = new URL(window.location.href);
   const requestedSection = locationUrl.searchParams.get("section");
   const section = Object.hasOwn(sections, requestedSection) ? requestedSection : "english";
+  const isGuide = locationUrl.searchParams.get("page") === "guide";
   const requestedLanguage = locationUrl.searchParams.get("lang");
   let language = Object.hasOwn(translatedSections, requestedLanguage) ? requestedLanguage : "en";
   const menu = document.querySelector("#language-menu");
@@ -291,18 +368,19 @@
     return typeof value === "function" ? value(...args) : value;
   }
 
-  function url({ section: destination = section, lang = language, hash = "", params = {} } = {}) {
+  function url({ section: destination = section, lang = language, page = isGuide ? "guide" : "", hash = "", params = {} } = {}) {
     const target = new URL(window.location.href);
     target.search = "";
     target.hash = hash;
     if (destination !== "english") target.searchParams.set("section", destination);
+    if (page) target.searchParams.set("page", page);
     if (lang !== "en") target.searchParams.set("lang", lang);
     for (const [key, value] of Object.entries(params)) target.searchParams.set(key, value);
     return target.href;
   }
 
   window.gonsinView = {
-    section, ...sections[section], t, url,
+    section, isGuide, ...sections[section], t, url,
     platformNames: {
       linkedin: "LinkedIn", facebook: "Facebook", youtube: "YouTube", drive: "Google Drive",
       canva: "Canva", website: "GONSIN.com", x: "X", pinterest: "Pinterest", instagram: "Instagram", tiktok: "TikTok",
@@ -313,7 +391,7 @@
 
   function translate() {
     document.documentElement.lang = window.gonsinView.locale;
-    document.title = t(sections[section].title);
+    document.title = t(isGuide ? "guideTitle" : sections[section].title);
     for (const element of translated) {
       const { i18n, i18nLabel, i18nPlaceholder, i18nAlt } = element.dataset;
       if (i18n) element.textContent = t(i18n);
@@ -327,16 +405,27 @@
     }
     for (const link of document.querySelectorAll("[data-nav]")) {
       const destination = link.dataset.nav;
-      link.href = destination === "library" || destination === "highlights"
-        ? "#" + destination
-        : url({ section: destination === "home" ? "english" : destination, lang: destination === "english" ? "en" : language });
+      if (destination === "guide") {
+        link.href = url({ page: "guide" });
+        if (isGuide) link.setAttribute("aria-current", "page");
+      } else if (["library", "highlights", "guide-back"].includes(destination)) {
+        const hash = destination === "guide-back" ? "library" : destination;
+        link.href = isGuide ? url({ page: "", hash }) : "#" + hash;
+      } else {
+        link.href = url({ section: destination === "home" ? "english" : destination, page: "", lang: destination === "english" ? "en" : language });
+      }
+    }
+    if (isGuide) {
+      for (const image of document.querySelectorAll("[data-guide-image]")) {
+        image.src = "assets/guide-" + language + "-" + image.dataset.guideImage + ".webp";
+      }
     }
     dialog.lang = window.gonsinView.locale;
     if (translatedSections[language]) invitationLink.href = url({ section: translatedSections[language] });
   }
 
   function shouldInvite() {
-    return Object.hasOwn(translatedSections, language) && translatedSections[language] !== section;
+    return !isGuide && Object.hasOwn(translatedSections, language) && translatedSections[language] !== section;
   }
 
   function showInvitation() {
@@ -377,6 +466,14 @@
     if (event.target === dialog) dialog.close();
   });
 
+  document.querySelector("#library-page").hidden = isGuide;
+  document.querySelector("#guide").hidden = !isGuide;
+  if (isGuide) {
+    const skipLink = document.querySelector(".skip-link");
+    skipLink.href = "#guide";
+    skipLink.dataset.i18n = "guideSkip";
+    document.querySelector(".header-share .share-label").dataset.i18n = "guideShare";
+  }
   for (const element of document.querySelectorAll("[data-home-only]")) element.hidden = section !== "english";
   for (const element of document.querySelectorAll("[data-section-only]")) element.hidden = section === "english";
   for (const languageSection of Object.values(translatedSections)) {

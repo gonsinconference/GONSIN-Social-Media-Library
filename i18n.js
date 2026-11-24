@@ -386,11 +386,12 @@
   }
   if (section !== "english") {
     const attribute = "data-" + section + "-href";
-    for (const link of document.querySelectorAll(".footer-social [" + attribute + "]")) {
-      link.href = link.getAttribute(attribute);
+    for (const link of document.querySelectorAll(".footer-social a")) {
+      const destination = link.getAttribute(attribute);
+      link.hidden = !destination;
+      if (destination) link.href = destination;
     }
   }
-  for (const link of document.querySelectorAll("[data-hide-in-spanish]")) link.hidden = section === "spanish";
   menu.hidden = false;
   translate();
   if (shouldInvite() && locationUrl.searchParams.get("invite") === "1") showInvitation();

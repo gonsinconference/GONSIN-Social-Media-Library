@@ -1,12 +1,15 @@
 "use strict";
 
 (() => {
+  const view = window.gonsinView;
+  const { t } = view;
   const dialog = document.querySelector("#excel-dialog");
   const form = document.querySelector("#excel-form");
   const from = document.querySelector("#excel-from");
   const to = document.querySelector("#excel-to");
   const range = document.querySelector("#excel-range");
   const typeList = document.querySelector("#excel-types");
+  const linkList = document.querySelector("#excel-links");
   const status = document.querySelector("#excel-status");
   const submit = document.querySelector("#download-selection");
   const fullWorkbook = document.querySelector("#download-full-workbook");
@@ -18,16 +21,21 @@
   const calendarNext = document.querySelector("#calendar-next");
   const calendarDays = document.querySelector("#calendar-days");
   const calendarButtons = [...document.querySelectorAll("[data-calendar-for]")];
+  if (view.spanish) {
+    const spanishDownload = document.querySelector(".spanish-download");
+    fullWorkbook.href = spanishDownload.href;
+    fullWorkbook.download = spanishDownload.download;
+  }
   const release = new URL(fullWorkbook.href).searchParams.get("v");
+  const filename = fullWorkbook.download;
+  const sheetName = view.spanish ? "Spanish Social Media" : "Social Media";
   const isoDate = /^\d{4}-\d{2}-\d{2}$/;
-  const dateFormat = new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeZone: "UTC" });
-  const monthFormat = new Intl.DateTimeFormat("en-US", { month: "long", timeZone: "UTC" });
-  const calendarDate = new Intl.DateTimeFormat("en-US", { dateStyle: "full", timeZone: "UTC" });
   let toolsPromise;
   let records;
   let recordsPromise;
   let selection = [];
   let selectedLinks = [];
+  let linkKeys = [];
   let dateInput;
 
   function loadScript(path) {
@@ -67,38 +75,50 @@
     status.dataset.error = String(error);
   }
 
-  function renderOptions() {
-    const labels = [...new Set(records.map(row => row.sourceType))].sort((a, b) => a.localeCompare(b, "en"));
-    for (const type of labels) {
+  function renderCheckboxes(list, name, pairs) {
+    const checked = new Set([...list.querySelectorAll("input:checked")].map(checkbox => checkbox.value));
+    const options = pairs.map(([value, text]) => {
       const label = document.createElement("label");
       label.className = "excel-type-option";
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
-      checkbox.name = "type";
-      checkbox.value = type;
-      label.append(checkbox, type);
-      typeList.append(label);
-    }
-    const format = value => dateFormat.format(new Date(value + "T00:00:00Z"));
+      checkbox.name = name;
+      checkbox.value = value;
+      checkbox.checked = checked.has(value);
+      label.append(checkbox, text);
+      return label;
+    });
+    list.replaceChildren(...options);
+  }
+
+  function renderOptions() {
+    const labels = [...new Set(records.map(row => row.sourceType))]
+      .map(type => [type, view.type(type)]).sort((a, b) => a[1].localeCompare(b[1], view.locale));
+    renderCheckboxes(typeList, "type", labels);
+    const orderedLinks = view.spanish ? linkKeys : ["linkedin", "facebook", "youtube", "website", "drive", "canva"];
+    renderCheckboxes(linkList, "link-type", orderedLinks.map(key => [key, view.platformNames[key]]));
+    const dateFormat = new Intl.DateTimeFormat(view.locale, { dateStyle: "medium", timeZone: "UTC" });
     const first = records.at(-1).date;
     const last = records[0].date;
-    const dates = first === last ? format(first) : format(first) + " to " + format(last);
-    range.textContent = "Available: " + dates + ". Leave either date blank for an open range.";
+    const dates = dateFormat.formatRange(new Date(first + "T00:00:00Z"), new Date(last + "T00:00:00Z"));
+    range.textContent = t("available", dates) + " " + t("rangeHint");
     for (const button of calendarButtons) button.disabled = false;
   }
 
   function readRecords() {
     if (!recordsPromise) {
-      recordsPromise = Promise.all([
-        loadWorkbookTools(),
-        fetch(fullWorkbook.href).then(response => {
-          if (!response.ok) throw new Error("Could not load the published Excel file.");
-          return response.arrayBuffer();
-        }),
-      ]).then(([, bytes]) => {
+      recordsPromise = loadWorkbookTools().then(async () => {
         const tools = window.GonsinWeekly;
-        const posts = tools.readFile(bytes, window.XLSX).records;
-        records = tools.downloadRecords(posts, window.gonsinCatalog);
+        if (view.spanish) {
+          linkKeys = tools.spanishDownloadLinkKeys.filter(key => window.gonsinSpanishCatalog.items.some(item => item.links[key]));
+          records = window.gonsinSpanishCatalog.items.map(item => ({ ...item, sourceType: item.type, model: item.model || "" }));
+        } else {
+          const response = await fetch(fullWorkbook.href);
+          if (!response.ok) throw new Error("Could not load the published Excel file.");
+          const posts = tools.readFile(await response.arrayBuffer(), window.XLSX).records;
+          records = tools.downloadRecords(posts, window.gonsinCatalog);
+          linkKeys = tools.downloadLinkKeys;
+        }
         renderOptions();
       }).catch(error => {
         recordsPromise = undefined;
@@ -126,24 +146,23 @@
     if (invalidStart || invalidEnd || reversed) {
       selection = [];
       submit.disabled = true;
-      message(reversed ? "End date must be on or after the start date." : "Enter a valid date as YYYY-MM-DD.", true);
+      message(t(reversed ? "reversed" : "invalidDate"), true);
       return;
     }
     const values = new FormData(form);
     const types = new Set(values.getAll("type"));
     const links = new Set(values.getAll("link-type"));
-    selectedLinks = window.GonsinWeekly.downloadLinkKeys.filter(key => !links.size || links.has(key));
+    selectedLinks = linkKeys.filter(key => !links.size || links.has(key));
     selection = records.filter(row =>
       (!start || row.date >= start) && (!end || row.date <= end)
       && (!types.size || types.has(row.sourceType))
       && selectedLinks.some(key => row.links[key]));
     submit.disabled = selection.length === 0;
     if (!selection.length) {
-      message("No records match. Change the dates, types or links.");
+      message(t("noDownload"));
       return;
     }
-    const label = selection.length === 1 ? "record" : "records";
-    message(selection.length + " " + label + " ready to download.");
+    message(t("ready", selection.length));
   }
 
   function utcDate(year, month, day) {
@@ -158,6 +177,7 @@
     const firstDay = utcDate(year, month, 1).getUTCDay();
     const dayCount = utcDate(year, month + 1, 0).getUTCDate();
     const selected = dateInput.value.trim();
+    const calendarDate = new Intl.DateTimeFormat(view.locale, { dateStyle: "full", timeZone: "UTC" });
     const body = document.createDocumentFragment();
     for (let i = 0; i < firstDay + dayCount; i += 7) {
       const week = document.createElement("tr");
@@ -200,7 +220,7 @@
     calendarYear.replaceChildren(...years);
     calendarYear.value = String(year);
     calendarMonth.value = String(Number(date.slice(5, 7)) - 1);
-    calendarTitle.textContent = dateInput === from ? "Choose start date" : "Choose end date";
+    calendarTitle.textContent = t(dateInput === from ? "pickStart" : "pickEnd");
     renderCalendar();
     calendar.showModal();
     (calendarDays.querySelector('[aria-pressed="true"]') || calendarMonth).focus();
@@ -220,40 +240,39 @@
     if (dialog.open) return;
     dialog.showModal();
     if (!records) {
-      message("Loading the published Excel…");
+      message(t("loading"));
       try {
         await readRecords();
       } catch {
-        message("Filters could not load. Reopen this window to retry, or use Download all for the social media workbook.", true);
+        message(t("filtersError"), true);
         return;
       }
     }
     updateSelection();
   }
 
-  function downloadWorkbook(rows, links, filename) {
+  function downloadWorkbook(rows, links, name) {
     try {
       const tools = window.GonsinWeekly;
-      const bytes = tools.makeWorkbook(rows, window.XLSX, links);
+      const bytes = tools.makeWorkbook(rows, window.XLSX, links, sheetName);
       const url = URL.createObjectURL(new Blob([bytes], { type: tools.mime }));
       const link = document.createElement("a");
       link.href = url;
-      link.download = filename;
+      link.download = name;
       document.body.append(link);
       link.click();
       link.remove();
       window.setTimeout(() => URL.revokeObjectURL(url), 30_000);
     } catch {
-      message("Could not create the Excel file. Please try again.", true);
+      message(t("exportError"), true);
     }
   }
 
   function downloadSelection(event) {
     event.preventDefault();
     if (!selection.length) return;
-    const tools = window.GonsinWeekly;
-    const complete = selection.length === records.length && selectedLinks.length === tools.downloadLinkKeys.length;
-    downloadWorkbook(selection, selectedLinks, complete ? tools.filename : "GONSIN-Social-Media-Selection.xlsx");
+    const complete = selection.length === records.length && selectedLinks.length === linkKeys.length;
+    downloadWorkbook(selection, selectedLinks, complete ? filename : filename.replace(/-Library\.xlsx$/, "-Selection.xlsx"));
   }
 
   fullWorkbook.addEventListener("click", async event => {
@@ -265,13 +284,23 @@
       fullWorkbook.click();
       return;
     }
-    const tools = window.GonsinWeekly;
-    downloadWorkbook(records, tools.downloadLinkKeys, tools.filename);
+    downloadWorkbook(records, linkKeys, filename);
   });
   for (const link of document.querySelectorAll("[data-excel-download]")) link.addEventListener("click", openDownload);
-  for (let month = 0; month < 12; month++) {
-    calendarMonth.add(new Option(monthFormat.format(utcDate(2000, month, 1)), String(month)));
+  function localizeCalendar() {
+    const monthFormat = new Intl.DateTimeFormat(view.locale, { month: "long", timeZone: "UTC" });
+    const selected = calendarMonth.value || "0";
+    calendarMonth.replaceChildren(...Array.from({ length: 12 }, (_, month) =>
+      new Option(monthFormat.format(utcDate(2000, month, 1)), String(month))));
+    calendarMonth.value = selected;
   }
+  localizeCalendar();
+  document.addEventListener("gonsinlocalechange", () => {
+    localizeCalendar();
+    if (!records) return;
+    renderOptions();
+    updateSelection();
+  });
   for (const button of calendarButtons) button.addEventListener("click", () => openCalendar(button));
   calendarMonth.addEventListener("change", renderCalendar);
   calendarYear.addEventListener("change", renderCalendar);

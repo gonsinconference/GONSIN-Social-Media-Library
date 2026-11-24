@@ -1,22 +1,19 @@
 "use strict";
 
-const catalog = window.gonsinCatalog;
+const view = window.gonsinView;
+const { t } = view;
+const catalog = view.spanish ? window.gonsinSpanishCatalog : window.gonsinCatalog;
 const isLocalFile = window.location.protocol === "file:";
 const appRelease = new URL(document.currentScript?.src || document.baseURI).searchParams.get("v");
 const assetPath = name => window.gonsinAssets?.[name] || "assets/" + name + (appRelease ? "?v=" + appRelease : "");
 const itemsById = new Map(catalog.items.map(item => [item.id, item]));
-const categories = new Set(["all", "videos", "projects", "solutions", "newsletters", "events", "articles", "updates"]);
-const platforms = {
-  linkedin: "LinkedIn",
-  facebook: "Facebook",
-  youtube: "YouTube",
-  drive: "Google Drive",
-  canva: "Canva",
-  website: "GONSIN.com",
-};
-const dateFormat = new Intl.DateTimeFormat("en", {
+const categories = new Set(["all", ...catalog.items.map(item => item.category)]);
+const platforms = Object.fromEntries(Object.entries(view.platformNames).filter(([key]) =>
+  !view.spanish ? !["x", "pinterest", "instagram", "tiktok"].includes(key) : catalog.items.some(item => item.links[key])));
+const newDateFormat = () => new Intl.DateTimeFormat(view.locale, {
   year: "numeric", month: "short", day: "numeric", timeZone: "UTC",
 });
+let dateFormat = newDateFormat();
 const dateLabel = iso => dateFormat.format(new Date(iso + "T00:00:00Z"));
 const pageSize = 12;
 
@@ -39,6 +36,7 @@ const shareInput = document.querySelector("#share-url");
 const detailShare = document.querySelector("#detail-share");
 const detailFeedback = document.querySelector("#detail-feedback");
 const toast = document.querySelector("#toast");
+const detailImage = document.querySelector("#detail-image");
 
 let selectedCategory = "all";
 let shown = 0;
@@ -60,12 +58,15 @@ function shareUrl(id) {
   if (isLocalFile && id) {
     const item = itemsById.get(id);
     if (item.category === "videos" && item.links.youtube) return item.links.youtube;
-    return item.links.website || item.links.linkedin || item.links.facebook || item.links.youtube || item.links.drive || item.links.canva;
+    return ["website", "linkedin", "facebook", "youtube", "x", "instagram", "pinterest", "tiktok", "drive", "canva"]
+      .map(key => item.links[key]).find(Boolean);
   }
-  const url = new URL(window.location.href);
-  url.search = "";
-  url.hash = id || "";
-  return url.href;
+  return view.url({ hash: id || "" });
+}
+
+function mediaImage(item) {
+  if (item.image) return assetPath(item.image.src);
+  if (item.youtubeThumbnail) return "https://i.ytimg.com/vi/" + item.youtubeThumbnail + "/hqdefault.jpg";
 }
 
 function platformLinks(item) {
@@ -78,7 +79,7 @@ function platformLinks(item) {
     anchor.target = "_blank";
     anchor.rel = "noopener noreferrer";
     anchor.textContent = label;
-    anchor.setAttribute("aria-label", "Open on " + label + " (opens in a new tab)");
+    anchor.setAttribute("aria-label", t("openOn", label));
     const arrow = document.createElement("span");
     arrow.setAttribute("aria-hidden", "true");
     arrow.textContent = "↗";
@@ -96,7 +97,7 @@ function renderArchive() {
   const dates = resources.map(item => item.date).sort();
   if (!dates.length) return;
   const archive = document.querySelector("#archive-dates");
-  const month = new Intl.DateTimeFormat("en", { month: "short", year: "numeric", timeZone: "UTC" });
+  const month = new Intl.DateTimeFormat(view.locale, { month: "short", year: "numeric", timeZone: "UTC" });
   const formatMonth = iso => month.format(new Date(iso + "T00:00:00Z"));
   const start = formatMonth(dates[0]);
   const end = formatMonth(dates.at(-1));
@@ -107,14 +108,14 @@ function renderArchive() {
 function renderHighlights() {
   const template = document.querySelector("#highlight-template");
   const grid = document.querySelector("#highlights-grid");
+  grid.replaceChildren();
   for (const feature of catalog.featured) {
     const item = itemsById.get(feature.id);
     const cover = feature.image || item?.image;
     if (!cover && !feature.category) continue;
     const tile = template.content.firstElementChild.cloneNode(true);
     if (feature.category) {
-      const query = new URLSearchParams({ category: feature.category });
-      tile.href = "?" + query + "#library";
+      tile.href = view.url({ hash: "library", params: { category: feature.category } });
       tile.dataset.highlightCategory = feature.category;
     } else {
       tile.href = "#" + item.id;
@@ -128,9 +129,12 @@ function renderHighlights() {
     } else {
       tile.querySelector(".highlight-media").hidden = true;
     }
-    tile.querySelector("h3").textContent = feature.title;
+    const titleKey = { "GONSIN at ISE 2027": "ise", Newsletter: "newsletter", "Case Studies": "caseStudies" }[feature.title];
+    tile.querySelector("h3").textContent = titleKey ? t(titleKey) : feature.title;
     const label = tile.querySelector(".highlight-type");
-    label.textContent = feature.label || "";
+    const labelKey = { "Exhibition preview": "exhibitionPreview", "Conference solution": "conferenceSolution",
+      "Project archive": "projectArchive" }[feature.label];
+    label.textContent = labelKey ? t(labelKey) : feature.label || "";
     label.hidden = !label.textContent;
     if (feature.category && item) {
       const caption = tile.querySelector(".highlight-caption");
@@ -149,12 +153,21 @@ function renderCard(item) {
   const card = resourceTemplate.content.firstElementChild.cloneNode(true);
   const title = card.querySelector(".resource-title");
   title.textContent = item.title;
+  title.lang = view.spanish ? "es" : "en";
   title.href = "#" + item.id;
   title.dataset.resource = item.id;
   const time = card.querySelector("time");
   time.dateTime = item.date;
   time.textContent = dateLabel(item.date);
-  card.querySelector(".resource-type").textContent = item.type;
+  card.querySelector(".resource-type").textContent = view.type(item.type);
+
+  const source = view.spanish && mediaImage(item);
+  if (source) {
+    const image = card.querySelector(".resource-image");
+    image.addEventListener("error", () => { image.hidden = true; }, { once: true });
+    image.src = source;
+    image.hidden = false;
+  }
 
   if (item.model) {
     const model = card.querySelector(".resource-model");
@@ -165,8 +178,8 @@ function renderCard(item) {
   card.querySelector(".platform-links").append(platformLinks(item));
   const copy = card.querySelector("[data-copy]");
   copy.dataset.copy = item.id;
-  if (isLocalFile) copy.title = "Copy original post link";
-  copy.setAttribute("aria-label", (isLocalFile ? "Copy original link for " : "Copy link for ") + item.title);
+  copy.title = t(isLocalFile ? "copyOriginal" : "copyResource");
+  copy.setAttribute("aria-label", t(isLocalFile ? "copyOriginalFor" : "copyFor", item.title));
   return card;
 }
 
@@ -175,10 +188,7 @@ function appendPage(focusNext = false) {
   const cards = next.map(renderCard);
   grid.append(...cards);
   shown += next.length;
-  const noun = results.length === 1 ? "resource" : "resources";
-  resultCount.textContent = shown < results.length
-    ? "Showing " + shown + " of " + results.length + " " + noun
-    : results.length + " " + noun;
+  resultCount.textContent = t("resultCount", shown, results.length);
   loadRow.hidden = shown >= results.length;
   if (focusNext && cards.length) {
     cards[0].querySelector(".resource-title").focus();
@@ -211,6 +221,9 @@ function selectCategory(value) {
 
 function initializeFilters() {
   for (const value of years) year.add(new Option(value, value));
+  for (const [key, label] of Object.entries(platforms)) platform.add(new Option(label, key));
+  for (const button of categoryButtons) button.hidden = !categories.has(button.dataset.category);
+  if (view.spanish) categoryButtons[0].textContent = t("allPosts");
   const params = new URLSearchParams(window.location.search);
   search.value = (params.get("q") || "").slice(0, 250);
   year.value = years.includes(params.get("year")) ? params.get("year") : "";
@@ -243,18 +256,19 @@ function updateFilters() {
 
 function showResource(item, trigger = null) {
   returnFocus = trigger;
-  const image = document.querySelector("#detail-image");
-  image.hidden = !item.image;
-  if (item.image) {
-    image.src = assetPath(item.image.src);
-    image.alt = item.image.alt;
+  const source = mediaImage(item);
+  detailImage.hidden = !source;
+  if (source) {
+    detailImage.src = source;
+    detailImage.alt = item.image?.alt || "";
   } else {
-    image.removeAttribute("src");
-    image.alt = "";
+    detailImage.removeAttribute("src");
+    detailImage.alt = "";
   }
 
-  document.querySelector("#detail-meta").textContent = item.type + " · " + dateLabel(item.date);
+  document.querySelector("#detail-meta").textContent = view.type(item.type) + " · " + dateLabel(item.date);
   document.querySelector("#detail-title").textContent = item.title;
+  document.querySelector("#detail-title").lang = view.spanish ? "es" : "en";
   const model = document.querySelector("#detail-model");
   model.textContent = item.model || "";
   model.hidden = !item.model;
@@ -294,7 +308,7 @@ function closeResource() {
   }
   if (focusTarget?.isConnected) {
     focusTarget.focus({ preventScroll: true });
-  } else if (!focusTarget && !window.location.hash.startsWith("#media-")) {
+  } else if (!focusTarget && !itemsById.has(window.location.hash.slice(1))) {
     document.querySelector("#library-title").focus();
   }
   returnFocus = null;
@@ -302,10 +316,10 @@ function closeResource() {
 
 function notifyCopy(id) {
   if (resourceDialog.open) {
-    detailFeedback.textContent = "Link copied.";
+    detailFeedback.textContent = t("copied");
     return;
   }
-  toast.textContent = isLocalFile ? "Original link copied." : id ? "Resource link copied." : "Library link copied.";
+  toast.textContent = t(isLocalFile ? "originalCopied" : id ? "resourceCopied" : "libraryCopied");
   window.clearTimeout(toastTimer);
   toastTimer = window.setTimeout(() => { toast.textContent = ""; }, 3000);
 }
@@ -372,6 +386,7 @@ for (const dialog of [resourceDialog, shareDialog]) {
   });
 }
 resourceDialog.addEventListener("close", closeResource);
+detailImage.addEventListener("error", () => { detailImage.hidden = true; });
 window.addEventListener("hashchange", followHash);
 
 if ("IntersectionObserver" in window) {
@@ -384,11 +399,24 @@ if ("IntersectionObserver" in window) {
 
 if (isLocalFile) {
   document.querySelector(".header-share").hidden = true;
-  detailShare.lastChild.textContent = " Copy original link";
+  document.querySelector("#detail-copy-label").textContent = t("copyOriginal");
 }
 
+document.addEventListener("gonsinlocalechange", () => {
+  dateFormat = newDateFormat();
+  if (isLocalFile) document.querySelector("#detail-copy-label").textContent = t("copyOriginal");
+  if (view.spanish) categoryButtons[0].textContent = t("allPosts");
+  else {
+    renderArchive();
+    renderHighlights();
+  }
+  renderResults();
+});
+
 initializeFilters();
-renderArchive();
-renderHighlights();
+if (!view.spanish) {
+  renderArchive();
+  renderHighlights();
+}
 renderResults();
 followHash();

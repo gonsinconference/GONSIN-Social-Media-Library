@@ -9,8 +9,13 @@
     youtube: ["YouTube", 34],
     canva: ["Canva Link", 33],
     website: ["GONSIN.com", 42],
+    x: ["X", 34],
+    pinterest: ["Pinterest", 34],
+    instagram: ["Instagram", 34],
+    tiktok: ["TikTok", 34],
   };
-  const downloadLinkKeys = Object.keys(linkColumns);
+  const downloadLinkKeys = ["drive", "linkedin", "facebook", "youtube", "canva", "website"];
+  const spanishDownloadLinkKeys = ["drive", "facebook", "youtube", "x", "pinterest", "instagram", "tiktok"];
   const linkKeys = downloadLinkKeys.filter(key => key !== "website");
   const headers = [...detailColumns, ...linkKeys.map(key => linkColumns[key])].map(([name]) => name);
   const requiredHeaders = headers.slice(0, -1);
@@ -21,6 +26,10 @@
     youtube: ["youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"],
     canva: ["canva.link", "www.canva.com", "canva.com"],
     website: ["www.gonsin.com", "gonsin.com"],
+    x: ["x.com", "www.x.com"],
+    pinterest: ["pin.it", "pinterest.com", "www.pinterest.com"],
+    instagram: ["instagram.com", "www.instagram.com"],
+    tiktok: ["tiktok.com", "www.tiktok.com"],
   };
   const types = {
     video: ["videos", "Video"],
@@ -385,7 +394,7 @@
     ])];
   }
 
-  function makeWorkbook(records, XLSX, selectedLinks = linkKeys) {
+  function makeWorkbook(records, XLSX, selectedLinks = linkKeys, sheetName = "Social Media") {
     const rows = spreadsheetRows(records, selectedLinks);
     const [names] = rows;
     const sheet = XLSX.utils.aoa_to_sheet(rows);
@@ -400,12 +409,13 @@
       }
     });
     const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, sheet, "Social Media");
+    XLSX.utils.book_append_sheet(workbook, sheet, sheetName);
     return XLSX.write(workbook, { type: "array", bookType: "xlsx", compression: true });
   }
 
   globalThis.GonsinWeekly = {
     readFile, readBook, readRecords, readHeader, formatDate, urlFromCell, splitLinks, publicUrl, titleKey,
+    hasInternalAddress, itemId, spanishDownloadLinkKeys,
     readMarketingNews, normalizeNews, newsEntryKey, makeCatalog, encodeCatalog, downloadRecords, downloadLinkKeys,
     makeWorkbook, spreadsheetRows, headers, filename, mime,
   };
